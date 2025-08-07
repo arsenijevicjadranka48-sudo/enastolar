@@ -1,15 +1,15 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="sr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stolarski Radovi</title>
+    <title>Stolarske Usluge - Po meri</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
         }
         header {
             background-color: #333;
@@ -17,16 +17,76 @@
             padding: 20px;
             text-align: center;
         }
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
         section {
-            padding: 40px 20px;
-            max-width: 1000px;
-            margin: auto;
+            padding: 30px;
         }
-        h2 {
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 10px;
+        .gallery img {
+            max-width: 300px;
+            margin: 10px;
+            border-radius: 5px;
         }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Stolarske Usluge Po Meri</h1>
+    <p>Kuhinje • Stolovi na razvlačenje • Vrata • Kreveti za male prostore</p>
+</header>
+
+<nav>
+    <a href="#usluge">Usluge</a>
+    <a href="#galerija">Galerija</a>
+    <a href="#kontakt">Kontakt</a>
+</nav>
+
+<section id="usluge">
+    <h2>Naše usluge</h2>
+    <ul>
+        <li><strong>Kuhinje po meri</strong> – funkcionalne, moderne, prilagođene vašem prostoru</li>
+        <li><strong>Stolovi na razvlačenje</strong> – idealni za manje stanove i fleksibilan prostor</li>
+        <li><strong>Unutrašnja i ulazna vrata</strong> – kvalitet, sigurnost, estetika</li>
+        <li><strong>Kreveti koji se podižu na zid</strong> – savršeni za garsonjere i male sobe</li>
+    </ul>
+</section>
+
+<section id="galerija">
+    <h2>Galerija radova</h2>
+    <div class="gallery">
+        <img src="kuhinja.jpg" alt="Kuhinja po meri">
+        <img src="sto.jpg" alt="Sto na razvlačenje">
+        <img src="vrata.jpg" alt="Vrata">
+        <img src="krevet.jpg" alt="Krevet na zid">
+    </div>
+</section>
+
+<section id="kontakt">
+    <h2>Kontakt</h2>
+    <p>Za porudžbine i konsultacije:</p>
+    <p><strong>Telefon:</strong> +381 64 123 4567</p>
+    <p><strong>Email:</strong> stolarska.radionica@email.com</p>
+    <p><strong>Lokacija:</strong> Beograd, Srbija</p>
+</section>
+
+<footer>
+    <p>&copy; 2025 Stolarske Usluge Po Meri. Sva prava zadržana.</p>
+</footer>
+
+</body>
+</html>
