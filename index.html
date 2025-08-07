@@ -1,18 +1,67 @@
-<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;">
-  <div style="flex: 1 1 200px; max-width: 300px; text-align: center;">
-    <img src="https://raw.githubusercontent.com/yourusername/yourrepo/main/KREVET.jpg" alt="Krevet" style="width: 100%; border-radius: 8px;">
-    <p>KREVET</p>
-  </div>
-  <div style="flex: 1 1 200px; max-width: 300px; text-align: center;">
-    <img src="https://raw.githubusercontent.com/yourusername/yourrepo/main/KREVET1.jpg" alt="Krevet1" style="width: 100%; border-radius: 8px;">
-    <p>KREVET1</p>
-  </div>
-  <div style="flex: 1 1 200px; max-width: 300px; text-align: center;">
-    <img src="https://raw.githubusercontent.com/yourusername/yourrepo/main/KUHINJA.jpg" alt="Kuhinja" style="width: 100%; border-radius: 8px;">
-    <p>KUHINJA</p>
-  </div>
-  <div style="flex: 1 1 200px; max-width: 300px; text-align: center;">
-    <img src="https://raw.githubusercontent.com/yourusername/yourrepo/main/KUHINJA1.jpg" alt="Kuhinja1" style="width: 100%; border-radius: 8px;">
-    <p>KUHINJA1</p>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>Stolarska Radnja</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            width: 300px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .gallery-item p {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Stolarska Radnja</h1>
+    <p>Izrada kuhinja, kreveta i stolova na razvlačenje</p>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="KREVET.jpg" alt="Krevet">
+            <p>KREVET</p>
+        </div>
+        <div class="gallery-item">
+            <img src="KREVET1.jpg" alt="Krevet1">
+            <p>KREVET1</p>
+        </div>
+        <div class="gallery-item">
+            <img src="KREVET2.jpg" alt="Krevet2">
+            <p>KREVET2</p>
+        </div>
+        <div class="gallery-item">
+            <img src="KUHINJA.jpg" alt="Kuhinja">
+            <p>KUHINJA</p>
+        </div>
+        <div class="gallery-item">
+            <img src="KUHINJA2.jpg" alt="Kuhinja2">
+            <p>KUHINJA2</p>
+        </div>
+    </div>
+
+</body>
+</html>
