@@ -2,18 +2,42 @@
 <html lang="hr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="9wbWQ2VzVK-IxJQi-x2kKJgEvJEzjFRUsMjinWEYGvI" />
-  <title>Stolarska Radnja</title>
+  <meta name="description" content="Stolarska radnja specijalizirana za izradu kuhinja, kreveta i stolova po mjeri. Kvaliteta, dizajn i tradicija u jednom.">
+  <meta name="keywords" content="stolarska radnja, kuhinje po mjeri, kreveti, stolovi, vrata, namještaj, drvo, dizajn, Bosna">
+  <meta name="author" content="Stolarska Radnja">
+  
+  <!-- Open Graph za SEO i društvene mreže -->
+  <meta property="og:title" content="Stolarska Radnja - Namještaj po mjeri">
+  <meta property="og:description" content="Izrada kuhinja, kreveta i stolova po mjeri.">
+  <meta property="og:image" content="KUHINJA.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tvojadomena.com">
+
+  <title>Stolarska Radnja | Namještaj po mjeri</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
+      background-color: #f9f9f9;
       padding: 20px;
       text-align: center;
+      color: #333;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #555;
     }
 
     nav {
-      margin-bottom: 30px;
+      margin: 25px 0;
     }
 
     nav a {
@@ -21,10 +45,35 @@
       text-decoration: none;
       color: #0066cc;
       font-weight: bold;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: #ff9900;
+    }
+
+    .lang-switch {
+      margin: 20px 0;
+    }
+
+    .lang-switch button {
+      background: #0066cc;
+      border: none;
+      color: white;
+      padding: 6px 12px;
+      margin: 0 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .lang-switch button:hover {
+      background: #ff9900;
+    }
+
+    .section {
+      margin: 40px auto;
+      max-width: 900px;
+      text-align: center;
     }
 
     .gallery {
@@ -36,16 +85,20 @@
     }
 
     .gallery-item {
-      width: 300px;
+      width: 280px;
       background: white;
       padding: 10px;
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.03);
     }
 
     .gallery-item img {
       width: 100%;
-      height: auto;
       border-radius: 5px;
     }
 
@@ -57,50 +110,131 @@
 
     footer {
       margin-top: 50px;
-      color: #888;
+      color: #777;
       font-size: 14px;
+    }
+
+    footer a {
+      color: #0066cc;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
 
-  <h1>Stolarska Radnja</h1>
-  <p>Izrada kuhinja, kreveta i stolova na razvlačenje</p>
+  <h1 id="title">Stolarska Radnja</h1>
+  <p id="subtitle">Izrada kuhinja, kreveta i stolova na razvlačenje</p>
 
   <nav>
-    <a href="index.html">Početna</a>
-    <a href="kuhinje.html">Kuhinje</a>
-    <a href="vrata.html">Vrata</a>
-    <a href="kreveti.html">Kreveti</a>
-    <a href="kontakt.html">Kontakt</a>
+    <a href="#home" id="nav-home">Početna</a>
+    <a href="#about" id="nav-about">O nama</a>
+    <a href="#services" id="nav-services">Usluge</a>
+    <a href="#gallery" id="nav-gallery">Galerija</a>
+    <a href="#contact" id="nav-contact">Kontakt</a>
   </nav>
 
-  <div class="gallery">
-    <div class="gallery-item">
-      <img src="KREVET.jpg" alt="Krevet">
-      <p>KREVET</p>
-    </div>
-    <div class="gallery-item">
-      <img src="KREVET1.jpg" alt="Krevet1">
-      <p>KREVET1</p>
-    </div>
-    <div class="gallery-item">
-      <img src="KREVET2.jpg" alt="Krevet2">
-      <p>KREVET2</p>
-    </div>
-    <div class="gallery-item">
-      <img src="KUHINJA.jpg" alt="Kuhinja">
-      <p>KUHINJA</p>
-    </div>
-    <div class="gallery-item">
-      <img src="KUHINJA2.jpg" alt="Kuhinja2">
-      <p>KUHINJA2</p>
+  <div class="lang-switch">
+    <button onclick="setLanguage('bs')">Bosanski</button>
+    <button onclick="setLanguage('en')">English</button>
+    <button onclick="setLanguage('de')">Deutsch</button>
+  </div>
+
+  <div class="section" id="about">
+    <h2 id="about-title">O nama</h2>
+    <p id="about-text">Naša stolarska radnja već dugi niz godina izrađuje visokokvalitetni namještaj po mjeri. Svaki komad radimo s posebnom pažnjom i preciznošću kako bismo zadovoljili želje kupaca.</p>
+  </div>
+
+  <div class="section" id="services">
+    <h2 id="services-title">Usluge</h2>
+    <ul id="services-list" style="list-style:none; padding:0;">
+      <li>✔ Kuhinje po mjeri</li>
+      <li>✔ Kreveti i stolovi na razvlačenje</li>
+      <li>✔ Ugradbena vrata i ormari</li>
+      <li>✔ Restauracija starog namještaja</li>
+    </ul>
+  </div>
+
+  <div class="section" id="gallery">
+    <h2 id="gallery-title">Galerija</h2>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="KREVET.jpg" alt="Krevet">
+        <p>Krevet</p>
+      </div>
+      <div class="gallery-item">
+        <img src="KREVET1.jpg" alt="Krevet1">
+        <p>Krevet 1</p>
+      </div>
+      <div class="gallery-item">
+        <img src="KUHINJA.jpg" alt="Kuhinja">
+        <p>Kuhinja</p>
+      </div>
+      <div class="gallery-item">
+        <img src="KUHINJA2.jpg" alt="Kuhinja2">
+        <p>Kuhinja 2</p>
+      </div>
     </div>
   </div>
 
+  <div class="section" id="contact">
+    <h2 id="contact-title">Kontakt</h2>
+    <p id="contact-text">Za više informacija i ponudu, kontaktirajte nas putem e-maila: <strong>info@stolarskaradnja.com</strong> ili telefonom <strong>+387 61 000 000</strong>.</p>
+  </div>
+
   <footer>
-    <p>&copy; 2025 Stolarska Radnja. Sva prava pridržana.</p>
+    <p>&copy; 2025 Stolarska Radnja. Sva prava pridržana. | <a href="#contact">Kontakt</a></p>
   </footer>
+
+  <script>
+    const translations = {
+      bs: {
+        title: "Stolarska Radnja",
+        subtitle: "Izrada kuhinja, kreveta i stolova na razvlačenje",
+        aboutTitle: "O nama",
+        aboutText: "Naša stolarska radnja izrađuje visokokvalitetni namještaj po mjeri...",
+        servicesTitle: "Usluge",
+        servicesList: ["Kuhinje po mjeri", "Kreveti i stolovi na razvlačenje", "Ugradbena vrata i ormari", "Restauracija starog namještaja"],
+        galleryTitle: "Galerija",
+        contactTitle: "Kontakt",
+        contactText: "Za više informacija i ponudu, kontaktirajte nas putem e-maila ili telefona."
+      },
+      en: {
+        title: "Carpentry Workshop",
+        subtitle: "Custom kitchens, beds, and extendable tables",
+        aboutTitle: "About Us",
+        aboutText: "Our carpentry workshop has been producing quality furniture for years...",
+        servicesTitle: "Services",
+        servicesList: ["Custom kitchens", "Beds and extendable tables", "Built-in doors and wardrobes", "Furniture restoration"],
+        galleryTitle: "Gallery",
+        contactTitle: "Contact",
+        contactText: "For more information or a quote, contact us via email or phone."
+      },
+      de: {
+        title: "Tischlerei Werkstatt",
+        subtitle: "Küchen, Betten und ausziehbare Tische nach Maß",
+        aboutTitle: "Über uns",
+        aboutText: "Unsere Tischlerei stellt seit Jahren hochwertige Möbel nach Maß her...",
+        servicesTitle: "Dienstleistungen",
+        servicesList: ["Küchen nach Maß", "Betten und ausziehbare Tische", "Einbautüren und Schränke", "Möbelrestaurierung"],
+        galleryTitle: "Galerie",
+        contactTitle: "Kontakt",
+        contactText: "Für weitere Informationen oder ein Angebot kontaktieren Sie uns per E-Mail oder Telefon."
+      }
+    };
+
+    function setLanguage(lang) {
+      const t = translations[lang];
+      document.getElementById("title").innerText = t.title;
+      document.getElementById("subtitle").innerText = t.subtitle;
+      document.getElementById("about-title").innerText = t.aboutTitle;
+      document.getElementById("about-text").innerText = t.aboutText;
+      document.getElementById("services-title").innerText = t.servicesTitle;
+      document.getElementById("services-list").innerHTML = t.servicesList.map(i => `<li>✔ ${i}</li>`).join("");
+      document.getElementById("gallery-title").innerText = t.galleryTitle;
+      document.getElementById("contact-title").innerText = t.contactTitle;
+      document.getElementById("contact-text").innerText = t.contactText;
+    }
+  </script>
 
 </body>
 </html>
