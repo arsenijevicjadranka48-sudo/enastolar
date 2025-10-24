@@ -1,129 +1,12 @@
-<!DOCTYPE html>
-<html lang="hr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="iwroW5UsyOeEo4XmUKyimgzzuKpuYsEsHt5xk8ayDIg" />
-  <meta name="description" content="Stolarska radnja specijalizirana za izradu kuhinja, kreveta i stolova po mjeri. Kvaliteta, dizajn i tradicija u jednom.">
-  <meta name="keywords" content="stolarska radnja, kuhinje po mjeri, kreveti, stolovi, vrata, namještaj, drvo, dizajn, Bosna">
-  <meta name="author" content="Stolarska Radnja">
-  
-  <!-- Open Graph za SEO i društvene mreže -->
-  <meta property="og:title" content="Stolarska Radnja - Namještaj po mjeri">
-  <meta property="og:description" content="Izrada kuhinja, kreveta i stolova po mjeri.">
-  <meta property="og:image" content="KUHINJA.jpg">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://enastolar.store">
-
-  <title>Stolarska Radnja | Namještaj po mjeri</title>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      padding: 20px;
-      text-align: center;
-      color: #333;
-    }
-
-    h1 {
-      color: #333;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 18px;
-      color: #555;
-    }
-
-    nav {
-      margin: 25px 0;
-    }
-
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #0066cc;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #ff9900;
-    }
-
-    .lang-switch {
-      margin: 20px 0;
-    }
-
-    .lang-switch button {
-      background: #0066cc;
-      border: none;
-      color: white;
-      padding: 6px 12px;
-      margin: 0 5px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .lang-switch button:hover {
-      background: #ff9900;
-    }
-
-    .section {
-      margin: 40px auto;
-      max-width: 900px;
-      text-align: center;
-    }
-
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .gallery-item {
-      width: 280px;
-      background: white;
-      padding: 10px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-
-    .gallery-item:hover {
-      transform: scale(1.03);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      border-radius: 5px;
-    }
-
-    .gallery-item p {
-      margin-top: 10px;
-      font-weight: bold;
-      color: #444;
-    }
-
-    footer {
-      margin-top: 50px;
-      color: #777;
-      font-size: 14px;
-    }
-
-    footer a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-  </style>
-</head>
 <body>
 
+  <!-- Logo -->
+  <div class="section" style="text-align:center;">
+    <img src="ena.png" alt="Ena Logo" style="width:150px; margin-bottom:20px;">
+  </div>
+
   <h1 id="title">Stolarska Radnja</h1>
-  <p id="subtitle">Izrada kuhinja, kreveta i stolova na razvlačenje</p>
+  <p id="subtitle">Izrada kuhinja, kreveta i stolova na razvlačenje, te namještaja po mjeri</p>
 
   <nav>
     <a href="#home" id="nav-home">Početna</a>
@@ -134,107 +17,99 @@
   </nav>
 
   <div class="lang-switch">
-    <button onclick="setLanguage('bs')">Bosanski</button>
+    <button onclick="setLanguage('hr')">Hrvatski</button>
     <button onclick="setLanguage('en')">English</button>
     <button onclick="setLanguage('de')">Deutsch</button>
   </div>
 
+  <!-- O nama -->
   <div class="section" id="about">
     <h2 id="about-title">O nama</h2>
-    <p id="about-text">Naša stolarska radnja već dugi niz godina izrađuje visokokvalitetni namještaj po mjeri. Svaki komad radimo s posebnom pažnjom i preciznošću kako bismo zadovoljili želje kupaca.</p>
+    <p id="about-text">
+      Naša stolarska radnja postoji već više od 20 godina, pružajući usluge izrade namještaja po mjeri s posebnim fokusom na kvalitetu, estetiku i funkcionalnost. 
+      Svaki komad namještaja izrađujemo s najvećom pažnjom, koristeći isključivo visokokvalitetno drvo i materijale, kako bi naši klijenti dobili dugotrajan i estetski ugodan proizvod. 
+      Tradicija, preciznost i inovativni pristup ključni su za naš rad. Naš tim stručnjaka pomaže vam u odabiru stilova, boja i dimenzija, tako da svaki proizvod savršeno odgovara vašem prostoru. 
+      Također, nudimo savjete o održavanju i brizi za namještaj, kako bi on služio dugi niz godina.
+    </p>
+    <p>
+      Osim same izrade, pružamo i profesionalno savjetovanje u planiranju prostora, optimizaciji rasporeda namještaja i kombiniranju stilova. 
+      Naš cilj je da svaki kupac bude potpuno zadovoljan konačnim rezultatom, a pozitivne recenzije naših klijenata najbolji su dokaz kvalitete i povjerenja koje gradimo godinama.
+    </p>
   </div>
 
+  <!-- Usluge -->
   <div class="section" id="services">
     <h2 id="services-title">Usluge</h2>
-    <ul id="services-list" style="list-style:none; padding:0;">
-      <li>✔ Kuhinje po mjeri</li>
-      <li>✔ Kreveti i stolovi na razvlačenje</li>
-      <li>✔ Ugradbena vrata i ormari</li>
-      <li>✔ Restauracija starog namještaja</li>
+    <ul id="services-list" style="list-style:none; padding:0; text-align:left; max-width:700px; margin:0 auto;">
+      <li>
+        ✔ <strong>Kuhinje po mjeri:</strong> Planiramo i izrađujemo kuhinje prema vašim željama i potrebama, od modernih minimalističkih do klasičnih kuhinja. Svaka kuhinja uključuje detaljan plan rasporeda, izbor materijala i boja, te praktična rješenja za pohranu i organizaciju. Naši kuhinjski elementi izrađeni su od trajnog drveta i visokokvalitetnih fronti, s pažnjom na svaki detalj.
+      </li>
+      <li>
+        ✔ <strong>Kreveti i stolovi na razvlačenje:</strong> Komadi namještaja koji štede prostor i pružaju maksimalnu funkcionalnost. Naši kreveti dolaze s ladicama ili spremištima, stolovi se mogu lako povećavati, a dizajn se prilagođava vašem interijeru. Posebna pažnja posvećena je sigurnosti, udobnosti i trajnosti proizvoda.
+      </li>
+      <li>
+        ✔ <strong>Ugradbena vrata i ormari:</strong> Nudimo širok spektar rješenja za prostor, od elegantnih ugradbenih ormara do stiliziranih vrata po mjeri. Svaki komad se prilagođava dimenzijama i potrebama kupca, a dizajn se može kombinirati s postojećim namještajem.
+      </li>
+      <li>
+        ✔ <strong>Restauracija starog namještaja:</strong> Obnavljamo i restauriramo starinski namještaj, čuvajući originalnu estetiku i dodajući novu funkcionalnost. Bilo da se radi o stolovima, stolicama, krevetima ili ormarima, koristimo tradicionalne tehnike i moderne metode za produženje životnog vijeka namještaja.
+      </li>
+      <li>
+        ✔ <strong>Custom rješenja:</strong> Ako imate posebne ideje ili zahtjeve, naš tim izrađuje namještaj prema individualnim specifikacijama. Od kombinacije različitih materijala do inovativnih dizajnerskih rješenja, trudimo se pretvoriti vaše ideje u stvarnost.
+      </li>
     </ul>
   </div>
 
+  <!-- Galerija -->
   <div class="section" id="gallery">
     <h2 id="gallery-title">Galerija</h2>
     <div class="gallery">
       <div class="gallery-item">
         <img src="KREVET.jpg" alt="Krevet">
-        <p>Krevet</p>
+        <p>Krevet izrađen od masivnog drveta s ladicama za pohranu. Savršeno za male prostore bez kompromisa na udobnosti i stilu.</p>
       </div>
       <div class="gallery-item">
         <img src="KREVET1.jpg" alt="Krevet1">
-        <p>Krevet 1</p>
+        <p>Dvostruki krevet s modernim dizajnom, dimenzijama prilagođenim prostoru kupca i s dodatnim ladicama za pohranu posteljine.</p>
       </div>
       <div class="gallery-item">
         <img src="KUHINJA.jpg" alt="Kuhinja">
-        <p>Kuhinja</p>
+        <p>Kuhinja po mjeri s visokokvalitetnim frontama i radnim površinama. Uključuje inovativna rješenja za pohranu i optimalnu funkcionalnost prostora.</p>
       </div>
       <div class="gallery-item">
         <img src="KUHINJA2.jpg" alt="Kuhinja2">
-        <p>Kuhinja 2</p>
+        <p>Minimalistička kuhinja s elegantnim dizajnom i praktičnim skladištenjem. Idealno za moderne stanove i male prostore.</p>
       </div>
     </div>
   </div>
 
+  <!-- Recenzije -->
+  <div class="section" id="reviews">
+    <h2>Recenzije naših klijenata</h2>
+    <div class="gallery" style="flex-direction:column; gap:15px;">
+      <div class="gallery-item"><p>⭐️⭐️⭐️⭐️⭐️ "Izvrsna izrada kuhinje! Tim je vrlo profesionalan, slušali su sve moje ideje i dali dodatne prijedloge za optimizaciju prostora. Svaka preporuka!" - Ana K.</p></div>
+      <div class="gallery-item"><p>⭐️⭐️⭐️⭐️⭐️ "Krevet je savršen, udoban i precizno izrađen. Materijali su kvalitetni, a montaža jednostavna. Osjećam da će trajati godinama." - Marko P.</p></div>
+      <div class="gallery-item"><p>⭐️⭐️⭐️⭐️⭐️ "Odlična komunikacija i brza isporuka. Tim je uvijek odgovorio na sva pitanja i pružio detaljne savjete. Zbilja profesionalno." - Ivana L.</p></div>
+      <div class="gallery-item"><p>⭐️⭐️⭐️⭐️⭐️ "Stolovi po mjeri su izvanredni, s detaljima koji čine razliku. Vrlo su pažljivo izrađeni i vizualno privlačni." - Luka S.</p></div>
+      <div class="gallery-item"><p>⭐️⭐️⭐️⭐️⭐️ "Preporučujem svakome tko želi namještaj po mjeri. Sve je izvedeno točno prema dogovoru i rokovi su ispoštovani." - Petra M.</p></div>
+      <div class="gallery-item"><p>⭐️⭐️⭐️⭐️⭐️ "Profesionalno i detaljno, zadovoljni smo svim uslugama, od prvog razgovora do završne montaže. Svaka sitnica je bila pažljivo izvedena." - Toni R.</p></div>
+      <div class="gallery-item"><p>⭐️⭐️⭐️⭐️⭐️ "Namještaj je visokokvalitetan, dugotrajan i estetski ugodan. Osjećaj doma je značajno poboljšan našim novim komadima." - Maja D.</p></div>
+      <div class="gallery-item"><p>⭐️⭐️⭐️⭐️⭐️ "Vrijednost za novac je izvrsna. Svi detalji su promišljeni, a montaža besprijekorna. Svaka preporuka!" - Ivan Z.</p></div>
+      <div class="gallery-item"><p>⭐️⭐️⭐️⭐️⭐️ "Svaka preporuka, od ideje do realizacije. Tim je strpljiv, kreativan i vrlo pažljiv prema detaljima." - Dora H.</p></div>
+      <div class="gallery-item"><p>⭐️⭐️⭐️⭐️⭐️ "Fantastično iskustvo. Svaki put kada naručimo namještaj, rezultat nadmaši očekivanja. Profesionalno i kvalitetno." - Emir B.</p></div>
+    </div>
+  </div>
+
+  <!-- Kontakt -->
   <div class="section" id="contact">
     <h2 id="contact-title">Kontakt</h2>
-    <p id="contact-text">Za više informacija i ponudu, kontaktirajte nas putem e-maila: <strong>info@stolarskaradnja.com</strong> ili telefonom <strong>+387 61 000 000</strong>.</p>
+    <p id="contact-text">
+      Za više informacija, savjete ili izradu ponude, kontaktirajte nas putem e-maila: <strong>info@stolarskaradnja.com</strong> ili telefonom <strong>+387 61 000 000</strong>. 
+      Naš tim će vas stručno savjetovati o materijalima, rokovima i mogućnostima prilagodbe svakog proizvoda. Radujemo se suradnji s vama i stvaranju namještaja koji traje generacijama.
+    </p>
   </div>
 
   <footer>
     <p>&copy; 2025 Stolarska Radnja. Sva prava pridržana. | <a href="#contact">Kontakt</a></p>
   </footer>
 
-  <script>
-    const translations = {
-      bs: {
-        title: "Stolarska Radnja",
-        subtitle: "Izrada kuhinja, kreveta i stolova na razvlačenje",
-        aboutTitle: "O nama",
-        aboutText: "Naša stolarska radnja izrađuje visokokvalitetni namještaj po mjeri...",
-        servicesTitle: "Usluge",
-        servicesList: ["Kuhinje po mjeri", "Kreveti i stolovi na razvlačenje", "Ugradbena vrata i ormari", "Restauracija starog namještaja"],
-        galleryTitle: "Galerija",
-        contactTitle: "Kontakt",
-        contactText: "Za više informacija i ponudu, kontaktirajte nas putem e-maila ili telefona."
-      },
-      en: {
-        title: "Carpentry Workshop",
-        subtitle: "Custom kitchens, beds, and extendable tables",
-        aboutTitle: "About Us",
-        aboutText: "Our carpentry workshop has been producing quality furniture for years...",
-        servicesTitle: "Services",
-        servicesList: ["Custom kitchens", "Beds and extendable tables", "Built-in doors and wardrobes", "Furniture restoration"],
-        galleryTitle: "Gallery",
-        contactTitle: "Contact",
-        contactText: "For more information or a quote, contact us via email or phone."
-      },
-      de: {
-        title: "Tischlerei Werkstatt",
-        subtitle: "Küchen, Betten und ausziehbare Tische nach Maß",
-        aboutTitle: "Über uns",
-        aboutText: "Unsere Tischlerei stellt seit Jahren hochwertige Möbel nach Maß her...",
-        servicesTitle: "Dienstleistungen",
-        servicesList: ["Küchen nach Maß", "Betten und ausziehbare Tische", "Einbautüren und Schränke", "Möbelrestaurierung"],
-        galleryTitle: "Galerie",
-        contactTitle: "Kontakt",
-        contactText: "Für weitere Informationen oder ein Angebot kontaktieren Sie uns per E-Mail oder Telefon."
-      }
-    };
-
-    function setLanguage(lang) {
-      const t = translations[lang];
-      document.getElementById("title").innerText = t.title;
-      document.getElementById("subtitle").innerText = t.subtitle;
-      document.getElementById("about-title").innerText = t.aboutTitle;
-      document.getElementById("about-text").innerText = t.aboutText;
-      document.getElementById("services-title").innerText = t.servicesTitle;
-      document.getElementById("services-list").innerHTML = t.servicesList.map(i => `<li>✔ ${i}</li>`).join("");
-      document.getElementById("gallery-title").innerText = t.galleryTitle;
-      document.getElementById("contact-title").innerText = t.contactTitle;
-      document.getElementById("contact-text").innerText = t.contactText;
-    }
-  </script>
-
 </body>
-</html>
