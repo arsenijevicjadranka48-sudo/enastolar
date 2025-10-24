@@ -1,33 +1,51 @@
 <!DOCTYPE html>
 <html lang="ba">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stolarska Radnja | Namještaj po mjeri</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stolarska Radnja | Namještaj po mjeri</title>
 
-  <style>
-    body {font-family: Arial, sans-serif; background:#f9f9f9; margin:0; padding:0; color:#333; line-height:1.6;}
-    header {display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background:#fff; box-shadow:0 4px 8px rgba(0,0,0,0.1); position:sticky; top:0; z-index:100;}
-    header img {width:120px;}
-    nav.header-nav a {margin:0 15px; text-decoration:none; color:#0066cc; font-weight:bold; transition:color 0.3s;}
-    nav.header-nav a:hover {color:#ff9900;}
-    @media(max-width:768px){header{flex-direction:column; gap:10px;} nav.header-nav{display:flex; flex-wrap:wrap; justify-content:center;}}
-    .section {margin:60px auto; max-width:1000px; text-align:center; padding:0 20px;}
-    h2 {color:#333; margin-bottom:25px;}
-    p {font-size:16px; color:#555;}
-    .card-container {display:flex; flex-wrap:wrap; justify-content:center; gap:20px;}
-    .card {background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s; padding:20px; max-width:300px; text-align:left;}
-    .card:hover {transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.2);}
-    .card img {width:100%; border-radius:8px;}
-    .card p {margin-top:10px; font-size:15px; line-height:1.5;}
-    .review-author {margin-top:8px; font-weight:bold; color:#0066cc;}
-    .back-top {display:inline-block; margin-top:20px; padding:8px 16px; background:#0066cc; color:#fff; border-radius:5px; text-decoration:none; transition:background 0.3s;}
-    .back-top:hover {background:#ff9900;}
-    footer {margin-top:60px; padding:20px; background:#fff; text-align:center; color:#777; font-size:14px; box-shadow:0 -4px 8px rgba(0,0,0,0.05);}
-    footer a {color:#0066cc; text-decoration:none;}
-    .lang-switch button {background:#0066cc; border:none; color:white; padding:6px 12px; margin:0 5px; border-radius:5px; cursor:pointer; transition:background 0.3s;}
-    .lang-switch button:hover {background:#ff9900;}
-  </style>
+<style>
+  html {
+    scroll-padding-top: 100px; /* visina sticky headera */
+    scroll-behavior: smooth;
+  }
+
+  body {font-family: Arial, sans-serif; background:#f9f9f9; margin:0; padding:0; color:#333; line-height:1.6;}
+
+  header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+    background:#fff;
+    box-shadow:0 4px 8px rgba(0,0,0,0.1);
+    position:sticky;
+    top:0;
+    z-index:100;
+  }
+
+  header img {width:120px;}
+  nav.header-nav a {margin:0 15px; text-decoration:none; color:#0066cc; font-weight:bold; transition:color 0.3s;}
+  nav.header-nav a:hover {color:#ff9900;}
+  @media(max-width:768px){header{flex-direction:column; gap:10px;} nav.header-nav{display:flex; flex-wrap:wrap; justify-content:center;}}
+
+  .section {margin:60px auto; max-width:1000px; text-align:center; padding:0 20px;}
+  h2 {color:#333; margin-bottom:25px;}
+  p {font-size:16px; color:#555;}
+  .card-container {display:flex; flex-wrap:wrap; justify-content:center; gap:20px;}
+  .card {background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s; padding:20px; max-width:300px; text-align:left;}
+  .card:hover {transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.2);}
+  .card img {width:100%; border-radius:8px;}
+  .card p {margin-top:10px; font-size:15px; line-height:1.5;}
+  .review-author {margin-top:8px; font-weight:bold; color:#0066cc;}
+  .back-top {display:inline-block; margin-top:20px; padding:8px 16px; background:#0066cc; color:#fff; border-radius:5px; text-decoration:none; transition:background 0.3s;}
+  .back-top:hover {background:#ff9900;}
+  footer {margin-top:60px; padding:20px; background:#fff; text-align:center; color:#777; font-size:14px; box-shadow:0 -4px 8px rgba(0,0,0,0.05);}
+  footer a {color:#0066cc; text-decoration:none;}
+  .lang-switch button {background:#0066cc; border:none; color:white; padding:6px 12px; margin:0 5px; border-radius:5px; cursor:pointer; transition:background 0.3s;}
+  .lang-switch button:hover {background:#ff9900;}
+</style>
 </head>
 <body id="top">
 
@@ -153,35 +171,4 @@ const content = {
       "⭐️⭐️⭐️⭐️⭐️ Ausgezeichnete Küchenarbeit! Das Team ist sehr professionell und aufmerksam.",
       "⭐️⭐️⭐️⭐️⭐️ Das Bett ist bequem und hochwertig. Einfache Montage."
     ],
-    contact: "Für weitere Informationen kontaktieren Sie uns per E-Mail: halilovicnusret8@gmail.com oder Telefon: +38761635340."
-  }
-};
-
-function setLanguage(lang){
-  document.getElementById('about-text').innerText = content[lang].about;
-
-  const servicesList = document.getElementById('services-list');
-  servicesList.innerHTML = '';
-  content[lang].services.forEach(item=>{
-    const li = document.createElement('li');
-    li.textContent = item;
-    servicesList.appendChild(li);
-  });
-
-  document.getElementById('gallery1').innerText = content[lang].gallery[0];
-  document.getElementById('gallery2').innerText = content[lang].gallery[1];
-  document.getElementById('gallery3').innerText = content[lang].gallery[2];
-  document.getElementById('gallery4').innerText = content[lang].gallery[3];
-
-  document.getElementById('review1').innerText = content[lang].reviews[0];
-  document.getElementById('review2').innerText = content[lang].reviews[1];
-
-  document.getElementById('contact-text').innerText = content[lang].contact;
-}
-
-// Default jezik: Bosanski
-setLanguage('ba');
-</script>
-
-</body>
-</html>
+    contact: "Für weitere Informationen kontaktieren Sie uns per E-Mail: halil
