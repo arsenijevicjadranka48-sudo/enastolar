@@ -1,115 +1,103 @@
-<body>
+<style>
+  /* Stil za kartice galerije i recenzija */
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
 
-  <!-- Logo -->
-  <div class="section" style="text-align:center;">
-    <img src="ena.png" alt="Ena Logo" style="width:150px; margin-bottom:20px;">
-  </div>
+  .gallery-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 20px;
+    max-width: 300px;
+  }
 
-  <h1 id="title">Stolarska Radnja</h1>
-  <p id="subtitle">Izrada kuhinja, kreveta i stolova na razvlačenje, te namještaja po mjeri</p>
+  .gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
 
-  <nav>
-    <a href="#home" id="nav-home">Početna</a>
-    <a href="#about" id="nav-about">O nama</a>
-    <a href="#services" id="nav-services">Usluge</a>
-    <a href="#gallery" id="nav-gallery">Galerija</a>
-    <a href="#contact" id="nav-contact">Kontakt</a>
-  </nav>
+  .gallery-item img {
+    width: 100%;
+    border-radius: 8px;
+  }
 
-  <div class="lang-switch">
-    <button onclick="setLanguage('hr')">Hrvatski</button>
-    <button onclick="setLanguage('en')">English</button>
-    <button onclick="setLanguage('de')">Deutsch</button>
-  </div>
+  .gallery-item p {
+    margin-top: 10px;
+    color: #444;
+    font-size: 16px;
+    line-height: 1.5;
+  }
 
-  <!-- O nama -->
-  <div class="section" id="about">
-    <h2 id="about-title">O nama</h2>
-    <p id="about-text">
-      Naša stolarska radnja postoji već više od 20 godina, pružajući usluge izrade namještaja po mjeri s posebnim fokusom na kvalitetu, estetiku i funkcionalnost. 
-      Svaki komad namještaja izrađujemo s najvećom pažnjom, koristeći isključivo visokokvalitetno drvo i materijale, kako bi naši klijenti dobili dugotrajan i estetski ugodan proizvod. 
-      Tradicija, preciznost i inovativni pristup ključni su za naš rad. Naš tim stručnjaka pomaže vam u odabiru stilova, boja i dimenzija, tako da svaki proizvod savršeno odgovara vašem prostoru. 
-      Također, nudimo savjete o održavanju i brizi za namještaj, kako bi on služio dugi niz godina.
-    </p>
-    <p>
-      Osim same izrade, pružamo i profesionalno savjetovanje u planiranju prostora, optimizaciji rasporeda namještaja i kombiniranju stilova. 
-      Naš cilj je da svaki kupac bude potpuno zadovoljan konačnim rezultatom, a pozitivne recenzije naših klijenata najbolji su dokaz kvalitete i povjerenja koje gradimo godinama.
-    </p>
-  </div>
+  /* Recenzije specifično */
+  .review-card {
+    text-align: left;
+    background: #fdfdfd;
+    border-left: 5px solid #ff9900;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #333;
+  }
 
-  <!-- Usluge -->
-  <div class="section" id="services">
-    <h2 id="services-title">Usluge</h2>
-    <ul id="services-list" style="list-style:none; padding:0; text-align:left; max-width:700px; margin:0 auto;">
-      <li>
-        ✔ <strong>Kuhinje po mjeri:</strong> Planiramo i izrađujemo kuhinje prema vašim željama i potrebama, od modernih minimalističkih do klasičnih kuhinja. Svaka kuhinja uključuje detaljan plan rasporeda, izbor materijala i boja, te praktična rješenja za pohranu i organizaciju. Naši kuhinjski elementi izrađeni su od trajnog drveta i visokokvalitetnih fronti, s pažnjom na svaki detalj.
-      </li>
-      <li>
-        ✔ <strong>Kreveti i stolovi na razvlačenje:</strong> Komadi namještaja koji štede prostor i pružaju maksimalnu funkcionalnost. Naši kreveti dolaze s ladicama ili spremištima, stolovi se mogu lako povećavati, a dizajn se prilagođava vašem interijeru. Posebna pažnja posvećena je sigurnosti, udobnosti i trajnosti proizvoda.
-      </li>
-      <li>
-        ✔ <strong>Ugradbena vrata i ormari:</strong> Nudimo širok spektar rješenja za prostor, od elegantnih ugradbenih ormara do stiliziranih vrata po mjeri. Svaki komad se prilagođava dimenzijama i potrebama kupca, a dizajn se može kombinirati s postojećim namještajem.
-      </li>
-      <li>
-        ✔ <strong>Restauracija starog namještaja:</strong> Obnavljamo i restauriramo starinski namještaj, čuvajući originalnu estetiku i dodajući novu funkcionalnost. Bilo da se radi o stolovima, stolicama, krevetima ili ormarima, koristimo tradicionalne tehnike i moderne metode za produženje životnog vijeka namještaja.
-      </li>
-      <li>
-        ✔ <strong>Custom rješenja:</strong> Ako imate posebne ideje ili zahtjeve, naš tim izrađuje namještaj prema individualnim specifikacijama. Od kombinacije različitih materijala do inovativnih dizajnerskih rješenja, trudimo se pretvoriti vaše ideje u stvarnost.
-      </li>
-    </ul>
-  </div>
+  .review-card p {
+    margin: 0;
+  }
 
-  <!-- Galerija -->
-  <div class="section" id="gallery">
-    <h2 id="gallery-title">Galerija</h2>
-    <div class="gallery">
-      <div class="gallery-item">
-        <img src="KREVET.jpg" alt="Krevet">
-        <p>Krevet izrađen od masivnog drveta s ladicama za pohranu. Savršeno za male prostore bez kompromisa na udobnosti i stilu.</p>
-      </div>
-      <div class="gallery-item">
-        <img src="KREVET1.jpg" alt="Krevet1">
-        <p>Dvostruki krevet s modernim dizajnom, dimenzijama prilagođenim prostoru kupca i s dodatnim ladicama za pohranu posteljine.</p>
-      </div>
-      <div class="gallery-item">
-        <img src="KUHINJA.jpg" alt="Kuhinja">
-        <p>Kuhinja po mjeri s visokokvalitetnim frontama i radnim površinama. Uključuje inovativna rješenja za pohranu i optimalnu funkcionalnost prostora.</p>
-      </div>
-      <div class="gallery-item">
-        <img src="KUHINJA2.jpg" alt="Kuhinja2">
-        <p>Minimalistička kuhinja s elegantnim dizajnom i praktičnim skladištenjem. Idealno za moderne stanove i male prostore.</p>
-      </div>
+  .review-card .review-author {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #0066cc;
+  }
+</style>
+
+<!-- Recenzije -->
+<div class="section" id="reviews">
+  <h2>Recenzije naših klijenata</h2>
+  <div class="gallery" style="flex-direction:column; gap:15px;">
+    <div class="gallery-item review-card">
+      <p>⭐️⭐️⭐️⭐️⭐️ Izvrsna izrada kuhinje! Tim je vrlo profesionalan, slušali su sve moje ideje i dali dodatne prijedloge za optimizaciju prostora. Svaka preporuka!</p>
+      <div class="review-author">- Ana K.</div>
+    </div>
+    <div class="gallery-item review-card">
+      <p>⭐️⭐️⭐️⭐️⭐️ Krevet je savršen, udoban i precizno izrađen. Materijali su kvalitetni, a montaža jednostavna. Osjećam da će trajati godinama.</p>
+      <div class="review-author">- Marko P.</div>
+    </div>
+    <div class="gallery-item review-card">
+      <p>⭐️⭐️⭐️⭐️⭐️ Odlična komunikacija i brza isporuka. Tim je uvijek odgovorio na sva pitanja i pružio detaljne savjete. Zbilja profesionalno.</p>
+      <div class="review-author">- Ivana L.</div>
+    </div>
+    <div class="gallery-item review-card">
+      <p>⭐️⭐️⭐️⭐️⭐️ Stolovi po mjeri su izvanredni, s detaljima koji čine razliku. Vrlo su pažljivo izrađeni i vizualno privlačni.</p>
+      <div class="review-author">- Luka S.</div>
+    </div>
+    <div class="gallery-item review-card">
+      <p>⭐️⭐️⭐️⭐️⭐️ Preporučujem svakome tko želi namještaj po mjeri. Sve je izvedeno točno prema dogovoru i rokovi su ispoštovani.</p>
+      <div class="review-author">- Petra M.</div>
+    </div>
+    <div class="gallery-item review-card">
+      <p>⭐️⭐️⭐️⭐️⭐️ Profesionalno i detaljno, zadovoljni smo svim uslugama, od prvog razgovora do završne montaže. Svaka sitnica je bila pažljivo izvedena.</p>
+      <div class="review-author">- Toni R.</div>
+    </div>
+    <div class="gallery-item review-card">
+      <p>⭐️⭐️⭐️⭐️⭐️ Namještaj je visokokvalitetan, dugotrajan i estetski ugodan. Osjećaj doma je značajno poboljšan našim novim komadima.</p>
+      <div class="review-author">- Maja D.</div>
+    </div>
+    <div class="gallery-item review-card">
+      <p>⭐️⭐️⭐️⭐️⭐️ Vrijednost za novac je izvrsna. Svi detalji su promišljeni, a montaža besprijekorna. Svaka preporuka!</p>
+      <div class="review-author">- Ivan Z.</div>
+    </div>
+    <div class="gallery-item review-card">
+      <p>⭐️⭐️⭐️⭐️⭐️ Svaka preporuka, od ideje do realizacije. Tim je strpljiv, kreativan i vrlo pažljiv prema detaljima.</p>
+      <div class="review-author">- Dora H.</div>
+    </div>
+    <div class="gallery-item review-card">
+      <p>⭐️⭐️⭐️⭐️⭐️ Fantastično iskustvo. Svaki put kada naručimo namještaj, rezultat nadmaši očekivanja. Profesionalno i kvalitetno.</p>
+      <div class="review-author">- Emir B.</div>
     </div>
   </div>
-
-  <!-- Recenzije -->
-  <div class="section" id="reviews">
-    <h2>Recenzije naših klijenata</h2>
-    <div class="gallery" style="flex-direction:column; gap:15px;">
-      <div class="gallery-item"><p>⭐️⭐️⭐️⭐️⭐️ "Izvrsna izrada kuhinje! Tim je vrlo profesionalan, slušali su sve moje ideje i dali dodatne prijedloge za optimizaciju prostora. Svaka preporuka!" - Ana K.</p></div>
-      <div class="gallery-item"><p>⭐️⭐️⭐️⭐️⭐️ "Krevet je savršen, udoban i precizno izrađen. Materijali su kvalitetni, a montaža jednostavna. Osjećam da će trajati godinama." - Marko P.</p></div>
-      <div class="gallery-item"><p>⭐️⭐️⭐️⭐️⭐️ "Odlična komunikacija i brza isporuka. Tim je uvijek odgovorio na sva pitanja i pružio detaljne savjete. Zbilja profesionalno." - Ivana L.</p></div>
-      <div class="gallery-item"><p>⭐️⭐️⭐️⭐️⭐️ "Stolovi po mjeri su izvanredni, s detaljima koji čine razliku. Vrlo su pažljivo izrađeni i vizualno privlačni." - Luka S.</p></div>
-      <div class="gallery-item"><p>⭐️⭐️⭐️⭐️⭐️ "Preporučujem svakome tko želi namještaj po mjeri. Sve je izvedeno točno prema dogovoru i rokovi su ispoštovani." - Petra M.</p></div>
-      <div class="gallery-item"><p>⭐️⭐️⭐️⭐️⭐️ "Profesionalno i detaljno, zadovoljni smo svim uslugama, od prvog razgovora do završne montaže. Svaka sitnica je bila pažljivo izvedena." - Toni R.</p></div>
-      <div class="gallery-item"><p>⭐️⭐️⭐️⭐️⭐️ "Namještaj je visokokvalitetan, dugotrajan i estetski ugodan. Osjećaj doma je značajno poboljšan našim novim komadima." - Maja D.</p></div>
-      <div class="gallery-item"><p>⭐️⭐️⭐️⭐️⭐️ "Vrijednost za novac je izvrsna. Svi detalji su promišljeni, a montaža besprijekorna. Svaka preporuka!" - Ivan Z.</p></div>
-      <div class="gallery-item"><p>⭐️⭐️⭐️⭐️⭐️ "Svaka preporuka, od ideje do realizacije. Tim je strpljiv, kreativan i vrlo pažljiv prema detaljima." - Dora H.</p></div>
-      <div class="gallery-item"><p>⭐️⭐️⭐️⭐️⭐️ "Fantastično iskustvo. Svaki put kada naručimo namještaj, rezultat nadmaši očekivanja. Profesionalno i kvalitetno." - Emir B.</p></div>
-    </div>
-  </div>
-
-  <!-- Kontakt -->
-  <div class="section" id="contact">
-    <h2 id="contact-title">Kontakt</h2>
-    <p id="contact-text">
-      Za više informacija, savjete ili izradu ponude, kontaktirajte nas putem e-maila: <strong>info@stolarskaradnja.com</strong> ili telefonom <strong>+387 61 000 000</strong>. 
-      Naš tim će vas stručno savjetovati o materijalima, rokovima i mogućnostima prilagodbe svakog proizvoda. Radujemo se suradnji s vama i stvaranju namještaja koji traje generacijama.
-    </p>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Stolarska Radnja. Sva prava pridržana. | <a href="#contact">Kontakt</a></p>
-  </footer>
-
-</body>
+</div>
