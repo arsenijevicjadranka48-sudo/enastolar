@@ -1,103 +1,180 @@
 <style>
-  /* Stil za kartice galerije i recenzija */
-  .gallery {
+  /* Osnovni stil */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  h1, h2 {
+    color: #333;
+  }
+
+  h2 {
+    margin-top: 40px;
+  }
+
+  p {
+    font-size: 16px;
+    color: #555;
+  }
+
+  nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #ff9900;
+  }
+
+  .section {
+    margin: 40px auto;
+    max-width: 1000px;
+    text-align: center;
+  }
+
+  /* Kartice za galeriju i recenzije */
+  .card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
   }
 
-  .gallery-item {
+  .card {
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     padding: 20px;
     max-width: 300px;
+    text-align: left;
   }
 
-  .gallery-item:hover {
+  .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   }
 
-  .gallery-item img {
+  .card img {
     width: 100%;
     border-radius: 8px;
   }
 
-  .gallery-item p {
+  .card p {
     margin-top: 10px;
     color: #444;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.5;
   }
 
-  /* Recenzije specifično */
-  .review-card {
-    text-align: left;
-    background: #fdfdfd;
-    border-left: 5px solid #ff9900;
-    padding: 15px 20px;
-    border-radius: 8px;
-    font-size: 15px;
-    color: #333;
-  }
-
-  .review-card p {
-    margin: 0;
-  }
-
-  .review-card .review-author {
+  .review-author {
     margin-top: 8px;
     font-weight: bold;
     color: #0066cc;
   }
+
+  footer {
+    margin-top: 50px;
+    color: #777;
+    font-size: 14px;
+  }
+
+  footer a {
+    color: #0066cc;
+    text-decoration: none;
+  }
 </style>
 
-<!-- Recenzije -->
-<div class="section" id="reviews">
-  <h2>Recenzije naših klijenata</h2>
-  <div class="gallery" style="flex-direction:column; gap:15px;">
-    <div class="gallery-item review-card">
-      <p>⭐️⭐️⭐️⭐️⭐️ Izvrsna izrada kuhinje! Tim je vrlo profesionalan, slušali su sve moje ideje i dali dodatne prijedloge za optimizaciju prostora. Svaka preporuka!</p>
-      <div class="review-author">- Ana K.</div>
-    </div>
-    <div class="gallery-item review-card">
-      <p>⭐️⭐️⭐️⭐️⭐️ Krevet je savršen, udoban i precizno izrađen. Materijali su kvalitetni, a montaža jednostavna. Osjećam da će trajati godinama.</p>
-      <div class="review-author">- Marko P.</div>
-    </div>
-    <div class="gallery-item review-card">
-      <p>⭐️⭐️⭐️⭐️⭐️ Odlična komunikacija i brza isporuka. Tim je uvijek odgovorio na sva pitanja i pružio detaljne savjete. Zbilja profesionalno.</p>
-      <div class="review-author">- Ivana L.</div>
-    </div>
-    <div class="gallery-item review-card">
-      <p>⭐️⭐️⭐️⭐️⭐️ Stolovi po mjeri su izvanredni, s detaljima koji čine razliku. Vrlo su pažljivo izrađeni i vizualno privlačni.</p>
-      <div class="review-author">- Luka S.</div>
-    </div>
-    <div class="gallery-item review-card">
-      <p>⭐️⭐️⭐️⭐️⭐️ Preporučujem svakome tko želi namještaj po mjeri. Sve je izvedeno točno prema dogovoru i rokovi su ispoštovani.</p>
-      <div class="review-author">- Petra M.</div>
-    </div>
-    <div class="gallery-item review-card">
-      <p>⭐️⭐️⭐️⭐️⭐️ Profesionalno i detaljno, zadovoljni smo svim uslugama, od prvog razgovora do završne montaže. Svaka sitnica je bila pažljivo izvedena.</p>
-      <div class="review-author">- Toni R.</div>
-    </div>
-    <div class="gallery-item review-card">
-      <p>⭐️⭐️⭐️⭐️⭐️ Namještaj je visokokvalitetan, dugotrajan i estetski ugodan. Osjećaj doma je značajno poboljšan našim novim komadima.</p>
-      <div class="review-author">- Maja D.</div>
-    </div>
-    <div class="gallery-item review-card">
-      <p>⭐️⭐️⭐️⭐️⭐️ Vrijednost za novac je izvrsna. Svi detalji su promišljeni, a montaža besprijekorna. Svaka preporuka!</p>
-      <div class="review-author">- Ivan Z.</div>
-    </div>
-    <div class="gallery-item review-card">
-      <p>⭐️⭐️⭐️⭐️⭐️ Svaka preporuka, od ideje do realizacije. Tim je strpljiv, kreativan i vrlo pažljiv prema detaljima.</p>
-      <div class="review-author">- Dora H.</div>
-    </div>
-    <div class="gallery-item review-card">
-      <p>⭐️⭐️⭐️⭐️⭐️ Fantastično iskustvo. Svaki put kada naručimo namještaj, rezultat nadmaši očekivanja. Profesionalno i kvalitetno.</p>
-      <div class="review-author">- Emir B.</div>
+<body>
+
+  <!-- Logo -->
+  <div class="section" style="text-align:center;">
+    <img src="ena.png" alt="Ena Logo" style="width:150px; margin-bottom:20px;">
+  </div>
+
+  <h1>Stolarska Radnja</h1>
+  <p>Izrada kuhinja, kreveta i stolova na razvlačenje, te namještaja po mjeri</p>
+
+  <!-- Galerija u karticama -->
+  <div class="section" id="gallery">
+    <h2>Galerija</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="KREVET.jpg" alt="Krevet">
+        <p>Krevet izrađen od masivnog drveta s ladicama za pohranu. Savršeno za male prostore bez kompromisa na udobnosti i stilu.</p>
+      </div>
+      <div class="card">
+        <img src="KREVET1.jpg" alt="Krevet1">
+        <p>Dvostruki krevet s modernim dizajnom, dimenzijama prilagođenim prostoru kupca i s dodatnim ladicama za pohranu posteljine.</p>
+      </div>
+      <div class="card">
+        <img src="KUHINJA.jpg" alt="Kuhinja">
+        <p>Kuhinja po mjeri s visokokvalitetnim frontama i radnim površinama. Uključuje inovativna rješenja za pohranu i optimalnu funkcionalnost prostora.</p>
+      </div>
+      <div class="card">
+        <img src="KUHINJA2.jpg" alt="Kuhinja2">
+        <p>Minimalistička kuhinja s elegantnim dizajnom i praktičnim skladištenjem. Idealno za moderne stanove i male prostore.</p>
+      </div>
     </div>
   </div>
-</div>
+
+  <!-- Recenzije u karticama -->
+  <div class="section" id="reviews">
+    <h2>Recenzije naših klijenata</h2>
+    <div class="card-container">
+      <div class="card">
+        <p>⭐️⭐️⭐️⭐️⭐️ Izvrsna izrada kuhinje! Tim je vrlo profesionalan, slušali su sve moje ideje i dali dodatne prijedloge za optimizaciju prostora. Svaka preporuka!</p>
+        <div class="review-author">- Ana K.</div>
+      </div>
+      <div class="card">
+        <p>⭐️⭐️⭐️⭐️⭐️ Krevet je savršen, udoban i precizno izrađen. Materijali su kvalitetni, a montaža jednostavna. Osjećam da će trajati godinama.</p>
+        <div class="review-author">- Marko P.</div>
+      </div>
+      <div class="card">
+        <p>⭐️⭐️⭐️⭐️⭐️ Odlična komunikacija i brza isporuka. Tim je uvijek odgovorio na sva pitanja i pružio detaljne savjete. Zbilja profesionalno.</p>
+        <div class="review-author">- Ivana L.</div>
+      </div>
+      <div class="card">
+        <p>⭐️⭐️⭐️⭐️⭐️ Stolovi po mjeri su izvanredni, s detaljima koji čine razliku. Vrlo su pažljivo izrađeni i vizualno privlačni.</p>
+        <div class="review-author">- Luka S.</div>
+      </div>
+      <div class="card">
+        <p>⭐️⭐️⭐️⭐️⭐️ Preporučujem svakome tko želi namještaj po mjeri. Sve je izvedeno točno prema dogovoru i rokovi su ispoštovani.</p>
+        <div class="review-author">- Petra M.</div>
+      </div>
+      <div class="card">
+        <p>⭐️⭐️⭐️⭐️⭐️ Profesionalno i detaljno, zadovoljni smo svim uslugama, od prvog razgovora do završne montaže. Svaka sitnica je bila pažljivo izvedena.</p>
+        <div class="review-author">- Toni R.</div>
+      </div>
+      <div class="card">
+        <p>⭐️⭐️⭐️⭐️⭐️ Namještaj je visokokvalitetan, dugotrajan i estetski ugodan. Osjećaj doma je značajno poboljšan našim novim komadima.</p>
+        <div class="review-author">- Maja D.</div>
+      </div>
+      <div class="card">
+        <p>⭐️⭐️⭐️⭐️⭐️ Vrijednost za novac je izvrsna. Svi detalji su promišljeni, a montaža besprijekorna. Svaka preporuka!</p>
+        <div class="review-author">- Ivan Z.</div>
+      </div>
+      <div class="card">
+        <p>⭐️⭐️⭐️⭐️⭐️ Svaka preporuka, od ideje do realizacije. Tim je strpljiv, kreativan i vrlo pažljiv prema detaljima.</p>
+        <div class="review-author">- Dora H.</div>
+      </div>
+      <div class="card">
+        <p>⭐️⭐️⭐️⭐️⭐️ Fantastično iskustvo. Svaki put kada naručimo namještaj, rezultat nadmaši očekivanja. Profesionalno i kvalitetno.</p>
+        <div class="review-author">- Emir B.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Stolarska Radnja. Sva prava pridržana. | <a href="#contact">Kontakt</a></p>
+  </footer>
+
+</body>
