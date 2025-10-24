@@ -1,247 +1,187 @@
 <!DOCTYPE html>
-<html lang="hr">
+<html lang="ba">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stolarska Radnja | Namještaj po mjeri</title>
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    /* Header */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      background-color: #fff;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    header img {
-      width: 120px;
-    }
-
-    nav.header-nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #0066cc;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav.header-nav a:hover {
-      color: #ff9900;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      nav.header-nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-    }
-
-    /* Sekcije */
-    .section {
-      margin: 60px auto;
-      max-width: 1000px;
-      text-align: center;
-      padding: 0 20px;
-    }
-
-    h2 {
-      color: #333;
-      margin-bottom: 25px;
-    }
-
-    p {
-      font-size: 16px;
-      color: #555;
-    }
-
-    /* Kartice */
-    .card-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-      padding: 20px;
-      max-width: 300px;
-      text-align: left;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    .card p {
-      margin-top: 10px;
-      font-size: 15px;
-      line-height: 1.5;
-    }
-
-    .review-author {
-      margin-top: 8px;
-      font-weight: bold;
-      color: #0066cc;
-    }
-
-    /* Footer */
-    footer {
-      margin-top: 60px;
-      padding: 20px;
-      background-color: #fff;
-      text-align: center;
-      color: #777;
-      font-size: 14px;
-      box-shadow: 0 -4px 8px rgba(0,0,0,0.05);
-    }
-
-    footer a {
-      color: #0066cc;
-      text-decoration: none;
-    }
+    body {font-family: Arial, sans-serif; background:#f9f9f9; margin:0; padding:0; color:#333; line-height:1.6;}
+    header {display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background:#fff; box-shadow:0 4px 8px rgba(0,0,0,0.1); position:sticky; top:0; z-index:100;}
+    header img {width:120px;}
+    nav.header-nav a {margin:0 15px; text-decoration:none; color:#0066cc; font-weight:bold; transition:color 0.3s;}
+    nav.header-nav a:hover {color:#ff9900;}
+    @media(max-width:768px){header{flex-direction:column; gap:10px;} nav.header-nav{display:flex; flex-wrap:wrap; justify-content:center;}}
+    .section {margin:60px auto; max-width:1000px; text-align:center; padding:0 20px;}
+    h2 {color:#333; margin-bottom:25px;}
+    p {font-size:16px; color:#555;}
+    .card-container {display:flex; flex-wrap:wrap; justify-content:center; gap:20px;}
+    .card {background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s; padding:20px; max-width:300px; text-align:left;}
+    .card:hover {transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.2);}
+    .card img {width:100%; border-radius:8px;}
+    .card p {margin-top:10px; font-size:15px; line-height:1.5;}
+    .review-author {margin-top:8px; font-weight:bold; color:#0066cc;}
+    .back-top {display:inline-block; margin-top:20px; padding:8px 16px; background:#0066cc; color:#fff; border-radius:5px; text-decoration:none; transition:background 0.3s;}
+    .back-top:hover {background:#ff9900;}
+    footer {margin-top:60px; padding:20px; background:#fff; text-align:center; color:#777; font-size:14px; box-shadow:0 -4px 8px rgba(0,0,0,0.05);}
+    footer a {color:#0066cc; text-decoration:none;}
+    .lang-switch button {background:#0066cc; border:none; color:white; padding:6px 12px; margin:0 5px; border-radius:5px; cursor:pointer; transition:background 0.3s;}
+    .lang-switch button:hover {background:#ff9900;}
   </style>
 </head>
+<body id="top">
 
-<body>
+<header>
+  <div class="logo"><img src="ena.png" alt="Ena Logo"></div>
+  <nav class="header-nav">
+    <a href="#about">O nama</a>
+    <a href="#services">Usluge</a>
+    <a href="#gallery">Galerija</a>
+    <a href="#reviews">Recenzije</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
+</header>
 
-  <!-- Header -->
-  <header>
-    <div class="logo">
-      <img src="ena.png" alt="Ena Logo">
-    </div>
-    <nav class="header-nav">
-      <a href="#about">O nama</a>
-      <a href="#services">Usluge</a>
-      <a href="#gallery">Galerija</a>
-      <a href="#reviews">Recenzije</a>
-      <a href="#contact">Kontakt</a>
-    </nav>
-  </header>
+<div class="lang-switch" style="text-align:center; margin-top:20px;">
+  <button onclick="setLanguage('ba')">Bosanski</button>
+  <button onclick="setLanguage('en')">English</button>
+  <button onclick="setLanguage('de')">Deutsch</button>
+</div>
 
-  <!-- O nama -->
-  <div class="section" id="about">
-    <h2>O nama</h2>
-    <p>
-      Naša stolarska radnja postoji već više od 20 godina, pružajući usluge izrade namještaja po mjeri s posebnim fokusom na kvalitetu, estetiku i funkcionalnost. Svaki komad namještaja izrađujemo s najvećom pažnjom, koristeći visokokvalitetno drvo i materijale.
-    </p>
-    <p>
-      Nudimo profesionalno savjetovanje u planiranju prostora i kombiniranju stilova, kako bi svaki kupac bio potpuno zadovoljan konačnim rezultatom.
-    </p>
+<div class="section" id="about">
+  <h2>O nama</h2>
+  <p id="about-text"></p>
+  <a href="#top" class="back-top">Nazad na početak</a>
+</div>
+
+<div class="section" id="services">
+  <h2>Usluge</h2>
+  <ul id="services-list" style="list-style:none; padding:0; text-align:left; max-width:700px; margin:0 auto;"></ul>
+  <a href="#top" class="back-top">Nazad na početak</a>
+</div>
+
+<div class="section" id="gallery">
+  <h2>Galerija</h2>
+  <div class="card-container">
+    <div class="card"><img src="KREVET.jpg" alt="Krevet"><p id="gallery1"></p></div>
+    <div class="card"><img src="KREVET1.jpg" alt="Krevet1"><p id="gallery2"></p></div>
+    <div class="card"><img src="KUHINJA.jpg" alt="Kuhinja"><p id="gallery3"></p></div>
+    <div class="card"><img src="KUHINJA2.jpg" alt="Kuhinja2"><p id="gallery4"></p></div>
   </div>
+  <a href="#top" class="back-top">Nazad na početak</a>
+</div>
 
-  <!-- Usluge -->
-  <div class="section" id="services">
-    <h2>Usluge</h2>
-    <div class="card-container">
-      <div class="card">
-        <p><strong>Kuhinje po mjeri:</strong> Izrada kuhinja prema željama kupaca, od modernih do klasičnih stilova. S detaljnim planom rasporeda i praktičnim rješenjima za pohranu.</p>
-      </div>
-      <div class="card">
-        <p><strong>Kreveti i stolovi na razvlačenje:</strong> Namještaj koji štedi prostor i pruža maksimalnu funkcionalnost, udoban i dugotrajan.</p>
-      </div>
-      <div class="card">
-        <p><strong>Ugradbena vrata i ormari:</strong> Stilizirani komadi koji se prilagođavaju prostoru, kombiniraju estetiku i funkcionalnost.</p>
-      </div>
-      <div class="card">
-        <p><strong>Restauracija starog namještaja:</strong> Obnova i restauracija starinskog namještaja, čuvajući originalnu estetiku i dodajući novu funkcionalnost.</p>
-      </div>
-      <div class="card">
-        <p><strong>Custom rješenja:</strong> Izrada namještaja po individualnim specifikacijama i kreativnim idejama kupaca.</p>
-      </div>
-    </div>
+<div class="section" id="reviews">
+  <h2>Recenzije naših klijenata</h2>
+  <div class="card-container">
+    <div class="card"><p id="review1"></p><div class="review-author">- Ana K.</div></div>
+    <div class="card"><p id="review2"></p><div class="review-author">- Marko P.</div></div>
   </div>
+  <a href="#top" class="back-top">Nazad na početak</a>
+</div>
 
-  <!-- Galerija -->
-  <div class="section" id="gallery">
-    <h2>Galerija</h2>
-    <div class="card-container">
-      <div class="card">
-        <img src="KREVET.jpg" alt="Krevet">
-        <p>Krevet od masivnog drveta s ladicama za pohranu – praktično i estetski.</p>
-      </div>
-      <div class="card">
-        <img src="KREVET1.jpg" alt="Krevet1">
-        <p>Dvostruki krevet s modernim dizajnom i dodatnim ladicama.</p>
-      </div>
-      <div class="card">
-        <img src="KUHINJA.jpg" alt="Kuhinja">
-        <p>Kuhinja po mjeri s visokokvalitetnim frontama i radnim površinama.</p>
-      </div>
-      <div class="card">
-        <img src="KUHINJA2.jpg" alt="Kuhinja2">
-        <p>Minimalistička kuhinja s elegantnim dizajnom i praktičnim skladištenjem.</p>
-      </div>
-    </div>
-  </div>
+<div class="section" id="contact">
+  <h2>Kontakt</h2>
+  <p id="contact-text"></p>
+  <a href="#top" class="back-top">Nazad na početak</a>
+</div>
 
-  <!-- Recenzije -->
-  <div class="section" id="reviews">
-    <h2>Recenzije naših klijenata</h2>
-    <div class="card-container">
-      <div class="card">
-        <p>⭐️⭐️⭐️⭐️⭐️ Izvrsna izrada kuhinje! Tim je vrlo profesionalan, slušali su sve moje ideje i dali dodatne prijedloge.</p>
-        <div class="review-author">- Ana K.</div>
-      </div>
-      <div class="card">
-        <p>⭐️⭐️⭐️⭐️⭐️ Krevet je savršen, udoban i precizno izrađen. Materijali su kvalitetni, a montaža jednostavna.</p>
-        <div class="review-author">- Marko P.</div>
-      </div>
-      <div class="card">
-        <p>⭐️⭐️⭐️⭐️⭐️ Odlična komunikacija i brza isporuka. Tim je uvijek odgovorio na sva pitanja.</p>
-        <div class="review-author">- Ivana L.</div>
-      </div>
-      <div class="card">
-        <p>⭐️⭐️⭐️⭐️⭐️ Stolovi po mjeri su izvanredni, s detaljima koji čine razliku.</p>
-        <div class="review-author">- Luka S.</div>
-      </div>
-      <div class="card">
-        <p>⭐️⭐️⭐️⭐️⭐️ Preporučujem svakome tko želi namještaj po mjeri. Sve je izvedeno točno prema dogovoru.</p>
-        <div class="review-author">- Petra M.</div>
-      </div>
-    </div>
-  </div>
+<footer>
+  &copy; 2025 Stolarska Radnja. Sva prava pridržana. | <a href="#contact">Kontakt</a>
+</footer>
 
-  <!-- Kontakt -->
-  <div class="section" id="contact">
-    <h2>Kontakt</h2>
-    <p>Za više informacija, savjete ili izradu ponude, kontaktirajte nas putem e-maila: <strong>info@stolarskaradnja.com</strong> ili telefonom <strong>+387 61 000 000</strong>.</p>
-  </div>
+<script>
+const content = {
+  ba: {
+    about: "Naša stolarska radnja postoji već više od 20 godina, pružajući usluge izrade namještaja po mjeri sa fokusom na kvalitet, estetiku i funkcionalnost.",
+    services: [
+      "Izrada kuhinja prema željama kupaca, od modernih do klasičnih stilova.",
+      "Kreveti i stolovi na razvlačenje – praktični i dugotrajni.",
+      "Ugradbena vrata i ormari – stilizirani komadi prilagođeni prostoru.",
+      "Restauracija starog namještaja – čuvanje estetike i funkcionalnosti.",
+      "Custom rješenja – namještaj po individualnim specifikacijama."
+    ],
+    gallery: [
+      "Krevet od masivnog drveta s ladicama za pohranu – praktično i estetski.",
+      "Dvostruki krevet s modernim dizajnom i dodatnim ladicama.",
+      "Kuhinja po mjeri s visokokvalitetnim frontama i radnim površinama.",
+      "Minimalistička kuhinja s elegantnim dizajnom i praktičnim skladištenjem."
+    ],
+    reviews: [
+      "⭐️⭐️⭐️⭐️⭐️ Izvrsna izrada kuhinje! Tim je vrlo profesionalan i pažljiv.",
+      "⭐️⭐️⭐️⭐️⭐️ Krevet je udoban i kvalitetan. Montaža jednostavna."
+    ],
+    contact: "Za više informacija kontaktirajte nas putem e-maila: halilovicnusret8@gmail.com ili telefonom: +38761635340."
+  },
+  en: {
+    about: "Our carpentry workshop has been providing custom furniture services for over 20 years, focusing on quality, aesthetics, and functionality.",
+    services: [
+      "Custom kitchens designed according to customer preferences, from modern to classic styles.",
+      "Expandable beds and tables – practical and durable.",
+      "Built-in doors and wardrobes – stylish pieces adapted to space.",
+      "Furniture restoration – preserving aesthetics and functionality.",
+      "Custom solutions – furniture according to individual specifications."
+    ],
+    gallery: [
+      "Solid wood bed with storage drawers – practical and aesthetic.",
+      "Double bed with modern design and extra drawers.",
+      "Custom kitchen with high-quality fronts and countertops.",
+      "Minimalist kitchen with elegant design and practical storage."
+    ],
+    reviews: [
+      "⭐️⭐️⭐️⭐️⭐️ Excellent kitchen craftsmanship! The team is very professional and attentive.",
+      "⭐️⭐️⭐️⭐️⭐️ The bed is comfortable and high quality. Easy installation."
+    ],
+    contact: "For more information, contact us via email: halilovicnusret8@gmail.com or phone: +38761635340."
+  },
+  de: {
+    about: "Unsere Tischlerei bietet seit über 20 Jahren maßgeschneiderte Möbelservices an, mit Fokus auf Qualität, Ästhetik und Funktionalität.",
+    services: [
+      "Küchen nach Maß, von modern bis klassisch.",
+      "Ausziehbare Betten und Tische – praktisch und langlebig.",
+      "Einbauschränke und Türen – stilvolle Stücke passend zum Raum.",
+      "Möbelrestaurierung – Ästhetik und Funktionalität erhalten.",
+      "Maßgeschneiderte Lösungen – Möbel nach individuellen Vorgaben."
+    ],
+    gallery: [
+      "Massivholz-Bett mit Schubladen – praktisch und ästhetisch.",
+      "Doppelbett mit modernem Design und zusätzlichen Schubladen.",
+      "Maßgeschneiderte Küche mit hochwertigen Fronten und Arbeitsplatten.",
+      "Minimalistische Küche mit elegantem Design und praktischem Stauraum."
+    ],
+    reviews: [
+      "⭐️⭐️⭐️⭐️⭐️ Ausgezeichnete Küchenarbeit! Das Team ist sehr professionell und aufmerksam.",
+      "⭐️⭐️⭐️⭐️⭐️ Das Bett ist bequem und hochwertig. Einfache Montage."
+    ],
+    contact: "Für weitere Informationen kontaktieren Sie uns per E-Mail: halilovicnusret8@gmail.com oder Telefon: +38761635340."
+  }
+};
 
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Stolarska Radnja. Sva prava pridržana. | <a href="#contact">Kontakt</a>
-  </footer>
+function setLanguage(lang){
+  document.getElementById('about-text').innerText = content[lang].about;
+
+  const servicesList = document.getElementById('services-list');
+  servicesList.innerHTML = '';
+  content[lang].services.forEach(item=>{
+    const li = document.createElement('li');
+    li.textContent = item;
+    servicesList.appendChild(li);
+  });
+
+  document.getElementById('gallery1').innerText = content[lang].gallery[0];
+  document.getElementById('gallery2').innerText = content[lang].gallery[1];
+  document.getElementById('gallery3').innerText = content[lang].gallery[2];
+  document.getElementById('gallery4').innerText = content[lang].gallery[3];
+
+  document.getElementById('review1').innerText = content[lang].reviews[0];
+  document.getElementById('review2').innerText = content[lang].reviews[1];
+
+  document.getElementById('contact-text').innerText = content[lang].contact;
+}
+
+// Default jezik: Bosanski
+setLanguage('ba');
+</script>
 
 </body>
 </html>
