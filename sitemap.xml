@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+      <loc>https://enastolar.store/</loc>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://enastolar.store/o-nama</loc>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://enastolar.store/usluge</loc>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://enastolar.store/kontakt</loc>
+      <priority>0.8</priority>
+   </url>
+</urlset>
