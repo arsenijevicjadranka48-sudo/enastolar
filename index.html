@@ -25,13 +25,14 @@
     z-index:1000;
   }
 
+  /* Korištenje eena.png za logo prema spisku fajlova */
   header img {height:60px;}
   nav.header-nav a {margin:0 15px; text-decoration:none; color:#333; font-weight:600; transition:color 0.3s;}
   nav.header-nav a:hover {color:#ff9900;}
 
-  /* Hero Sekcija */
+  /* Hero Sekcija - Korištena jedna od tvojih slika kao pozadina (npr. KUHINJA2.jpg) */
   .hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1581428982868-e410dd047a90?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('KUHINJA2.jpg');
     background-size: cover;
     background-position: center;
     height: 60vh;
@@ -46,19 +47,52 @@
   .hero h1 { font-size: 3rem; margin-bottom: 10px; }
   .hero p { font-size: 1.2rem; max-width: 700px; }
 
-  .section {margin:80px auto; max-width:1100px; text-align:center; padding:0 20px;}
+  .section {margin:80px auto; max-width:1200px; text-align:center; padding:0 20px;}
   h2 {color:#222; margin-bottom:15px; font-size: 2.2rem; position: relative; padding-bottom: 10px;}
   h2::after { content: ''; width: 60px; height: 3px; background: #ff9900; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
   
   .intro-text { max-width: 800px; margin: 0 auto 40px; font-size: 1.1rem; color: #666; }
 
-  .card-container {display:flex; flex-wrap:wrap; justify-content:center; gap:25px; margin-top: 30px;}
-  .card {background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.08); transition:transform 0.3s; padding:0; overflow: hidden; max-width:280px; text-align:left;}
-  .card:hover {transform:translateY(-10px);}
-  .card img {width:100%; height: 200px; object-fit: cover;}
-  .card-content { padding: 20px; }
-  .card p {margin:0; font-size:15px; color:#555;}
+  /* Nova, proširena Galerija - CSS Grid */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+  }
+
+  .gallery-card {
+    background:#fff; 
+    border-radius:12px; 
+    box-shadow:0 4px 15px rgba(0,0,0,0.08); 
+    transition:transform 0.3s; 
+    padding:0; 
+    overflow: hidden; 
+    text-align:left;
+  }
   
+  .gallery-card:hover {transform:translateY(-10px);}
+  
+  .gallery-card img {
+    width:100%; 
+    height: 250px; 
+    object-fit: cover; /* Ovo osigurava da sve slike budu iste veličine bez rastezanja */
+  }
+  
+  .card-content { padding: 20px; }
+  .gallery-card p {margin:0; font-size:15px; color:#555;}
+  .card-category {
+    font-size: 0.8rem;
+    color: #0066cc;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  /* Recenzije */
+  .review-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+  .review-card { background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.06); padding: 25px; max-width: 450px; text-align: left; }
   .review-author {margin-top:12px; font-weight:bold; color:#0066cc; font-size: 0.9rem;}
   
   .back-top {display:inline-block; margin-top:30px; padding:10px 20px; background:#333; color:#fff; border-radius:5px; text-decoration:none; transition:0.3s;}
@@ -73,7 +107,7 @@
 
   @media(max-width:768px){
     header{flex-direction:column; padding: 20px;} 
-    nav.header-nav{margin-top: 15px;}
+    nav.header-nav{margin-top: 15px; display: flex; flex-wrap: wrap; justify-content: center; gap: 5px;}
     .hero h1 { font-size: 2rem; }
     .lang-switch { position: static; margin-top: 10px; text-align: center; }
   }
@@ -82,7 +116,7 @@
 <body id="top">
 
 <header>
-  <div class="logo"><img src="ena.png" alt="Ena Logo"></div>
+  <div class="logo"><img src="eena.png" alt="Stolarska Radnja Logo"></div>
   <nav class="header-nav">
     <a href="#about">O nama</a>
     <a href="#services">Usluge</a>
@@ -99,8 +133,8 @@
 </div>
 
 <section class="hero">
-  <h1 id="hero-title">Namještaj koji priča priču</h1>
-  <p id="hero-sub">Vrhunska izrada od drveta prilagođena vašem domu i životnom stilu.</p>
+  <h1 id="hero-title">Namještaj po vašoj mjeri</h1>
+  <p id="hero-sub">Pretvorite vaše ideje u stvarnost uz vrhunsku izradu od drveta.</p>
 </section>
 
 <div class="section" id="about">
@@ -110,30 +144,119 @@
 </div>
 
 <div class="section" id="services" style="background: #eee; padding: 60px 20px; max-width: 100%;">
-  <div style="max-width: 1100px; margin: 0 auto;">
+  <div style="max-width: 1200px; margin: 0 auto;">
     <h2>Naše Usluge</h2>
-    <p class="intro-text" id="services-intro">Nudimo širok spektar stolarskih rješenja za vaš dom ili poslovni prostor.</p>
-    <ul id="services-list" style="list-style:none; padding:0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align:left;"></ul>
+    <p class="intro-text" id="services-intro"></p>
+    <ul id="services-list" style="list-style:none; padding:0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; text-align:left;"></ul>
   </div>
 </div>
 
 <div class="section" id="gallery">
-  <h2>Galerija Radova</h2>
-  <p class="intro-text">Pogledajte neke od naših nedavnih projekata koji krase domove naših zadovoljnih klijenata.</p>
-  <div class="card-container">
-    <div class="card"><img src="KREVET.jpg" alt="Krevet"><div class="card-content"><p id="gallery1"></p></div></div>
-    <div class="card"><img src="KREVET1.jpg" alt="Krevet1"><div class="card-content"><p id="gallery2"></p></div></div>
-    <div class="card"><img src="KUHINJA.jpg" alt="Kuhinja"><div class="card-content"><p id="gallery3"></p></div></div>
-    <div class="card"><img src="KUHINJA2.jpg" alt="Kuhinja2"><div class="card-content"><p id="gallery4"></p></div></div>
+  <h2>Galerija Naših Radova</h2>
+  <p class="intro-text">Pogledajte bogatu kolekciju naših proizvoda, od modernih kuhinja do funkcionalnih ormara i prozora.</p>
+  
+  <div class="gallery-grid">
+    <div class="gallery-card">
+      <img src="KUHINJA.jpg" alt="Kuhinja po mjeri">
+      <div class="card-content">
+        <span class="card-category">Kuhinje</span>
+        <p id="gal-kuhinja">Prostrana porodična kuhinja sa soft-close mehanizmima.</p>
+      </div>
+    </div>
+    
+    <div class="gallery-card">
+      <img src="KUHINJA2.jpg" alt="Moderna kuhinja">
+      <div class="card-content">
+        <span class="card-category">Kuhinje</span>
+        <p id="gal-kuhinja2">Kompaktna i moderna kuhinja idealna za manje prostore.</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="KREVET.jpg" alt="Masivni krevet">
+      <div class="card-content">
+        <span class="card-category">Kreveti</span>
+        <p id="gal-krevet">Masivni bračni krevet od punog drveta.</p>
+      </div>
+    </div>
+    
+    <div class="gallery-card">
+      <img src="KREVET1.jpg" alt="Dječiji krevet">
+      <div class="card-content">
+        <span class="card-category">Kreveti</span>
+        <p id="gal-krevet1">Krevet sa ugrađenim ladicama za maksimalnu uštedu prostora.</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="ORMAR.jpg" alt="Veliki ormar">
+      <div class="card-content">
+        <span class="card-category">Ormari</span>
+        <p id="gal-ormar">Prostrani ugradbeni ormar, rađen po tačnim mjerama vašeg zida.</p>
+      </div>
+    </div>
+    
+    <div class="gallery-card">
+      <img src="ORMAR1.jpg" alt="Ormar za hodnik">
+      <div class="card-content">
+        <span class="card-category">Ormari</span>
+        <p id="gal-ormar1">Funkcionalni ormar za hodnik sa ogledalom i policama za cipele.</p>
+      </div>
+    </div>
+    
+    <div class="gallery-card">
+      <img src="ORMAR2.jpeg" alt="Ormar sa kliznim vratima">
+      <div class="card-content">
+        <span class="card-category">Ormari</span>
+        <p id="gal-ormar2">Moderni ormar sa kliznim vratima i elegantnim finišem.</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="PROZOR.jpg" alt="Drveni prozor">
+      <div class="card-content">
+        <span class="card-category">Stolarija</span>
+        <p id="gal-prozor">Visokokvalitetni drveni prozor sa odličnom toplotnom izolacijom.</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="ULAZNA%20VRATA.jpg" alt="Ulazna vrata"> <div class="card-content">
+        <span class="card-category">Vrata</span>
+        <p id="gal-ulazna">Masivna ulazna vrata koja pružaju sigurnost i estetski izgled.</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="SOBNA%20VRATA.png" alt="Sobna vrata">
+      <div class="card-content">
+        <span class="card-category">Vrata</span>
+        <p id="gal-sobna">Elegantna unutrašnja vrata prilagođena dizajnu vašeg interijera.</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="STRIJER.jpg" alt="Stepenište"> <div class="card-content">
+        <span class="card-category">Stepeništa</span>
+        <p id="gal-strijer">Drveno stepenište rađeno po mjeri, sa zaštitnom ogradom.</p>
+      </div>
+    </div>
+
   </div>
   <a href="#top" class="back-top">Nazad na početak</a>
 </div>
 
 <div class="section" id="reviews">
   <h2>Šta kažu o nama</h2>
-  <div class="card-container">
-    <div class="card"><div class="card-content"><p id="review1"></p><div class="review-author">- Ana K.</div></div></div>
-    <div class="card"><div class="card-content"><p id="review2"></p><div class="review-author">- Marko P.</div></div></div>
+  <div class="review-container">
+    <div class="review-card">
+        <p id="review1"></p>
+        <div class="review-author">- Ana K.</div>
+    </div>
+    <div class="review-card">
+        <p id="review2"></p>
+        <div class="review-author">- Marko P.</div>
+    </div>
   </div>
 </div>
 
@@ -146,81 +269,100 @@
 </div>
 
 <footer>
-  <p>&copy; 2026 Stolarska Radnja Ena. Sva prava pridržana.</p>
+  <p>&copy; 2026 Stolarska Radnja Jadranka Arsenijević. Sva prava pridržana.</p>
   <p>Lokacija: Lukavac, Bosna i Hercegovina</p>
 </footer>
 
 <script>
 const content = {
   ba: {
-    heroTitle: "Namještaj koji priča priču",
-    heroSub: "Vrhunska izrada od drveta prilagođena vašem domu i životnom stilu.",
+    heroTitle: "Namještaj po vašoj mjeri",
+    heroSub: "Pretvorite vaše ideje u stvarnost uz vrhunsku izradu od drveta.",
     about: "Sa tradicijom dužom od dvije decenije, naša radnja spaja starinske stolarske vještine sa modernim dizajnom. Svaki komad drveta pažljivo biramo kako bismo osigurali dugovječnost i unikatan izgled vašeg interijera. Naš cilj nije samo napraviti namještaj, već stvoriti ambijent u kojem ćete uživati godinama.",
-    servicesIntro: "Od inicijalne ideje do finalne montaže, tu smo da svaki milimetar vašeg prostora iskoristimo pametno.",
+    servicesIntro: "Nudimo kompletnu uslugu od ideje do montaže za sve tipove prostorija.",
     services: [
-      "✅ <strong>Kuhinje po mjeri:</strong> Projektovanje i izrada modernih, funkcionalnih kuhinja sa najsavremenijim okovima.",
-      "✅ <strong>Spavaće sobe:</strong> Kreveti od punog drveta i plakari koji maksimiziraju vaš prostor za pohranu.",
-      "✅ <strong>Dnevni boravci:</strong> Unikatne komode, police i stolovi koji postaju centralni dio vašeg doma.",
-      "✅ <strong>Vrata i stepeništa:</strong> Izrada unutrašnjih vrata i oblaganje stepeništa najkvalitetnijim materijalima.",
-      "✅ <strong>Restauracija:</strong> Vraćamo stari sjaj vašem dragocjenom antiknom namještaju."
+      "✅ <strong>Kuhinje:</strong> Projektovanje i izrada modernih i funkcionalnih kuhinja.",
+      "✅ <strong>Ormari:</strong> Ugradbeni i klasični ormari, rađeni po mjeri vašeg prostora.",
+      "✅ <strong>Kreveti:</strong> Masivni drveni kreveti za udoban i zdrav san.",
+      "✅ <strong>Vrata i Prozori:</strong> Visokokvalitetna drvena stolarija.",
+      "✅ <strong>Custom Rješenja:</strong> Stolovi, komode, police i još mnogo toga po vašoj želji."
     ],
-    gallery: [
-      "Masivni bračni krevet sa ugrađenim ladicama za maksimalnu uštedu prostora.",
-      "Moderni dizajn kreveta sa tapaciranim uzglavljem i prirodnom teksturom drveta.",
-      "Prostrana porodična kuhinja sa 'soft-close' mehanizmima i elegantnim finišem.",
-      "Kompaktna kuhinja idealna za manje prostore, rađena po specifičnim mjerama."
-    ],
+    // Tekstovi za nove slike u galeriji
+    galKuhinja: "Prostrana porodična kuhinja sa soft-close mehanizmima.",
+    galKuhinja2: "Kompaktna i moderna kuhinja idealna za manje prostore.",
+    galKrevet: "Masivni bračni krevet od punog drveta.",
+    galKrevet1: "Krevet sa ugrađenim ladicama za maksimalnu uštedu prostora.",
+    galOrmar: "Prostrani ugradbeni ormar, rađen po tačnim mjerama vašeg zida.",
+    galOrmar1: "Funkcionalni ormar za hodnik sa ogledalom.",
+    galOrmar2: "Moderni ormar sa kliznim vratima.",
+    galProzor: "Visokokvalitetni drveni prozor.",
+    galUlazna: "Masivna ulazna vrata.",
+    galSobna: "Elegantna unutrašnja vrata.",
+    galStrijer: "Drveno stepenište rađeno po mjeri.",
+    
     reviews: [
-      "⭐️⭐️⭐️⭐️⭐️ Prezadovoljna sam izradom kuhinje. Sve je završeno u dogovorenom roku, a kvalitet je iznad svih očekivanja!",
-      "⭐️⭐️⭐️⭐️⭐️ Naručili smo krevet od punog drveta. Stabilan je, ne škripi i izgleda fenomenalno u sobi. Preporuka svima!"
+      "⭐️⭐️⭐️⭐️⭐️ Prezadovoljna sam izradom kuhinje. Sve je završeno u roku, a kvalitet je iznad svih očekivanja!",
+      "⭐️⭐️⭐️⭐️⭐️ Naručili smo krevet od punog drveta. Stabilan je i izgleda fenomenalno u sobi. Preporuka svima!"
     ],
     contact: "📧 halilovicnusret8@gmail.com <br> 📞 +387 61 635 340"
   },
   en: {
-    heroTitle: "Furniture That Tells a Story",
-    heroSub: "Premium woodwork tailored to your home and lifestyle.",
-    about: "With a tradition spanning over two decades, our workshop combines traditional carpentry skills with modern design. We carefully select every piece of wood to ensure longevity and a unique look for your interior.",
-    servicesIntro: "From initial idea to final installation, we are here to use every millimeter of your space wisely.",
+    heroTitle: "Custom-Made Furniture",
+    heroSub: "Turn your ideas into reality with premium woodwork.",
+    about: "With over two decades of tradition, our workshop combines traditional carpentry with modern design. We select every piece of wood carefully to ensure longevity and a unique look for your interior.",
+    servicesIntro: "We offer complete services from design to installation.",
     services: [
-      "✅ <strong>Custom Kitchens:</strong> Design and manufacture of modern, functional kitchens.",
-      "✅ <strong>Bedrooms:</strong> Solid wood beds and wardrobes that maximize storage.",
-      "✅ <strong>Living Rooms:</strong> Unique dressers, shelves, and tables.",
-      "✅ <strong>Doors & Stairs:</strong> Interior doors and stair casing with top-quality materials.",
-      "✅ <strong>Restoration:</strong> We restore the old glory of your precious antique furniture."
+      "✅ <strong>Kitchens:</strong> Design and manufacturing of modern, functional kitchens.",
+      "✅ <strong>Wardrobes:</strong> Built-in and classic wardrobes made to your specs.",
+      "✅ <strong>Beds:</strong> Solid wood beds for comfortable sleep.",
+      "✅ <strong>Doors & Windows:</strong> High-quality wooden carpentry.",
+      "✅ <strong>Custom Solutions:</strong> Tables, dressers, and more."
     ],
-    gallery: [
-      "Solid double bed with built-in drawers for maximum space saving.",
-      "Modern bed design with upholstered headboard and natural wood texture.",
-      "Spacious family kitchen with soft-close mechanisms and elegant finish.",
-      "Compact kitchen ideal for smaller spaces, made to specific measurements."
-    ],
+    galKuhinja: "Spacious family kitchen with soft-close mechanisms.",
+    galKuhinja2: "Compact, modern kitchen ideal for small spaces.",
+    galKrevet: "Solid wood double bed.",
+    galKrevet1: "Bed with built-in drawers for space saving.",
+    galOrmar: "Spacious built-in wardrobe.",
+    galOrmar1: "Functional hallway wardrobe with a mirror.",
+    galOrmar2: "Modern wardrobe with sliding doors.",
+    galProzor: "High-quality wooden window.",
+    galUlazna: "Massive front door.",
+    galSobna: "Elegant interior doors.",
+    galStrijer: "Custom wooden stairs.",
+    
     reviews: [
-      "⭐️⭐️⭐️⭐️⭐️ Excellent kitchen craftsmanship! Everything was finished on time and the quality is superb.",
-      "⭐️⭐️⭐️⭐️⭐️ We ordered a solid wood bed. It's stable, silent, and looks amazing. Highly recommended!"
+      "⭐️⭐️⭐️⭐️⭐️ Very satisfied with the kitchen. Finished on time, excellent quality!",
+      "⭐️⭐️⭐️⭐️⭐️ Ordered a solid wood bed. Sturdy and looks fantastic. Highly recommend!"
     ],
     contact: "📧 halilovicnusret8@gmail.com <br> 📞 +387 61 635 340"
   },
   de: {
-    heroTitle: "Möbel, die eine Geschichte erzählen",
-    heroSub: "Erstklassige Holzverarbeitung, angepasst an Ihr Zuhause.",
-    about: "Mit einer über zwanzigjährigen Tradition verbindet unsere Werkstatt traditionelles Handwerk mit modernem Design. Wir wählen jedes Stück Holz sorgfältig aus.",
-    servicesIntro: "Von der ersten Idee bis zur endgültigen Montage nutzen wir jeden Millimeter Ihres Raumes sinnvoll.",
+    heroTitle: "Möbel nach Maß",
+    heroSub: "Verwandeln Sie Ihre Ideen mit erstklassiger Holzverarbeitung in die Realität.",
+    about: "Mit über 20 Jahren Tradition verbindet unsere Werkstatt traditionelles Handwerk mit modernem Design.",
+    servicesIntro: "Komplettservice von der Planung bis zur Montage.",
     services: [
-      "✅ <strong>Küchen nach Maß:</strong> Planung und Herstellung moderner, funktionaler Küchen.",
-      "✅ <strong>Schlafzimmer:</strong> Massivholzbetten und Schränke für maximalen Stauraum.",
-      "✅ <strong>Wohnzimmer:</strong> Einzigartige Kommoden, Regale und Tische.",
-      "✅ <strong>Türen & Treppen:</strong> Innentüren und Treppenverkleidungen aus hochwertigen Materialien.",
-      "✅ <strong>Restaurierung:</strong> Wir verleihen Ihren antiken Möbeln neuen Glanz."
+      "✅ <strong>Küchen:</strong> Planung und Herstellung moderner Küchen.",
+      "✅ <strong>Schränke:</strong> Einbau- und klassische Schränke nach Maß.",
+      "✅ <strong>Betten:</strong> Massivholzbetten.",
+      "✅ <strong>Türen & Fenster:</strong> Hochwertige Holzschreinerei.",
+      "✅ <strong>Maßgeschneiderte Lösungen:</strong> Tische, Kommoden usw."
     ],
-    gallery: [
-      "Massives Doppelbett mit integrierten Schubladen für maximale Platzersparnis.",
-      "Modernes Bettdesign mit gepolstertem Kopfteil und natürlicher Holztextur.",
-      "Geräumige Familienküche mit Soft-Close-Mechanismen und elegantem Finish.",
-      "Kompakte Küche, ideal für kleinere Räume, nach spezifischen Maßen gefertigt."
-    ],
+    galKuhinja: "Geräumige Familienküche mit Soft-Close.",
+    galKuhinja2: "Kompakte, moderne Küche.",
+    galKrevet: "Massives Doppelbett.",
+    galKrevet1: "Bett mit Schubladen.",
+    galOrmar: "Großer Einbauschrank.",
+    galOrmar1: "Funktionale Flurgarderobe mit Spiegel.",
+    galOrmar2: "Moderner Schrank mit Schiebetüren.",
+    galProzor: "Hochwertiges Holzfenster.",
+    galUlazna: "Massive Eingangstür.",
+    galSobna: "Elegante Innentüren.",
+    galStrijer: "Holztreppe nach Maß.",
+    
     reviews: [
-      "⭐️⭐️⭐️⭐️⭐️ Hervorragende Küchenarbeit! Alles wurde pünktlich fertiggestellt und die Qualität ist top.",
-      "⭐️⭐️⭐️⭐️⭐️ Wir haben ein Massivholzbett bestellt. Es ist stabil und sieht toll aus. Sehr empfehlenswert!"
+      "⭐️⭐️⭐️⭐️⭐️ Sehr zufrieden mit der Küche. Termingerecht fertiggestellt, tolle Qualität!",
+      "⭐️⭐️⭐️⭐️⭐️ Massivholzbett bestellt. Stabil und sieht toll aus. Sehr zu empfehlen!"
     ],
     contact: "📧 halilovicnusret8@gmail.com <br> 📞 +387 61 635 340"
   }
@@ -245,16 +387,23 @@ function setLanguage(lang) {
     servicesList.appendChild(li);
   });
 
-  document.getElementById('gallery1').innerText = content[lang].gallery[0];
-  document.getElementById('gallery2').innerText = content[lang].gallery[1];
-  document.getElementById('gallery3').innerText = content[lang].gallery[2];
-  document.getElementById('gallery4').innerText = content[lang].gallery[3];
+  // Dodjeljivanje tekstova galerije
+  document.getElementById('gal-kuhinja').innerText = content[lang].galKuhinja;
+  document.getElementById('gal-kuhinja2').innerText = content[lang].galKuhinja2;
+  document.getElementById('gal-krevet').innerText = content[lang].galKrevet;
+  document.getElementById('gal-krevet1').innerText = content[lang].galKrevet1;
+  document.getElementById('gal-ormar').innerText = content[lang].galOrmar;
+  document.getElementById('gal-ormar1').innerText = content[lang].galOrmar1;
+  document.getElementById('gal-ormar2').innerText = content[lang].galOrmar2;
+  document.getElementById('gal-prozor').innerText = content[lang].galProzor;
+  document.getElementById('gal-ulazna').innerText = content[lang].galUlazna;
+  document.getElementById('gal-sobna').innerText = content[lang].galSobna;
+  document.getElementById('gal-strijer').innerText = content[lang].galStrijer;
 
   document.getElementById('review1').innerText = content[lang].reviews[0];
   document.getElementById('review2').innerText = content[lang].reviews[1];
 }
 
-// Inicijalno postavljanje na bosanski
 setLanguage('ba');
 </script>
 
