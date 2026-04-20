@@ -6,24 +6,35 @@
 <title>Stolarska Radnja | Namještaj po mjeri</title>
 <style>
   html { scroll-padding-top: 80px; scroll-behavior: smooth; }
-  body {font-family: 'Segoe UI', sans-serif; background:#f4f4f4; margin:0; padding:0; color:#333;}
+  body {font-family: 'Segoe UI', sans-serif; background:#f4f4f4; margin:0; padding:0; color:#333; line-height:1.6;}
+  
   header { display:flex; justify-content:space-between; align-items:center; padding:10px 5%; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,0.1); position:sticky; top:0; z-index:1000; }
   header img {height:50px;}
-  nav a {margin:0 12px; text-decoration:none; color:#333; font-weight:600;}
-  
-  .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('KUHINJA.jpg'); background-size: cover; background-position: center; height: 30vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; }
-  
-  .section {margin:40px auto; max-width:1200px; padding:0 20px;}
-  .folder-wrapper { background: #fff; border: 2px solid #ddd; border-radius: 10px; margin-bottom: 40px; overflow: hidden; }
-  .folder-header { background: #eee; padding: 10px 20px; border-bottom: 2px solid #ddd; font-weight: bold; color: #555; display: flex; align-items: center; }
-  .folder-header::before { content: '📂'; margin-right: 10px; }
-  
-  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
-  .gallery-item { background: #fff; border: 1px solid #eee; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-  .gallery-item img { width: 100%; height: 200px; object-fit: cover; display: block; }
-  .gallery-item p { padding: 10px; margin: 0; font-size: 14px; text-align: center; font-weight: 600; }
+  nav a {margin:0 12px; text-decoration:none; color:#333; font-weight:600; font-size:14px;}
 
-  footer { background: #222; color: #fff; padding: 20px; text-align: center; }
+  .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('KUHINJA.jpg'); background-size: cover; background-position: center; height: 35vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; }
+  
+  .section {margin:50px auto; max-width:1100px; padding:0 20px;}
+  h2 {text-align:center; border-bottom: 2px solid #ff9900; display: block; width: fit-content; margin: 0 auto 30px; padding-bottom: 5px; text-transform: uppercase;}
+
+  /* Stil za Foldere u galeriji */
+  .folder-wrapper { background: #fff; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 30px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+  .folder-header { background: #f8f8f8; padding: 12px 20px; border-bottom: 1px solid #ddd; font-weight: bold; color: #444; }
+  
+  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 15px; padding: 15px; }
+  .gallery-item { border-radius: 6px; overflow: hidden; background: #fff; border: 1px solid #eee; text-align: center; transition: 0.3s; }
+  .gallery-item:hover { transform: translateY(-5px); }
+  .gallery-item img { width: 100%; height: 180px; object-fit: cover; display: block; }
+  .gallery-item p { padding: 8px; margin: 0; font-size: 13px; font-weight: 600; background: #fdfdfd; }
+
+  /* Recenzije */
+  .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+  .review-card { background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 5px solid #ff9900; }
+  
+  .lang-switch { text-align: center; margin: 20px 0; }
+  .lang-switch button { cursor: pointer; padding: 6px 16px; margin: 0 5px; border: 1px solid #ccc; background: #fff; border-radius: 4px; font-weight: bold; }
+  
+  footer { background: #222; color: #fff; padding: 30px; text-align: center; margin-top: 50px; }
 </style>
 </head>
 <body>
@@ -31,69 +42,138 @@
 <header>
   <div class="logo"><img src="eena.png" alt="Logo"></div>
   <nav>
-    <a href="#kuhinje">Kuhinje</a>
-    <a href="#kreveti">Kreveti</a>
-    <a href="#ormari">Ormari</a>
-    <a href="#vrata">Vrata</a>
+    <a href="#about">O nama</a>
+    <a href="#gallery">Galerija</a>
+    <a href="#reviews">Recenzije</a>
+    <a href="#contact">Kontakt</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h1>Pregled Radova po Folderima</h1>
+  <h1 id="hero-title">Stolarska Radnja</h1>
+  <p id="hero-sub">Vrhunska izrada namještaja po mjeri</p>
 </section>
 
-<div class="section" id="kuhinje">
+<div class="lang-switch">
+  <button onclick="setLanguage('ba')">BA</button>
+  <button onclick="setLanguage('en')">EN</button>
+  <button onclick="setLanguage('de')">DE</button>
+</div>
+
+<div class="section" id="about">
+  <h2 id="about-h">O nama</h2>
+  <p id="about-text" style="text-align:center; max-width:800px; margin:0 auto; font-size: 1.1rem;"></p>
+</div>
+
+<div class="section" id="gallery">
+  <h2 id="gallery-h">Galerija Radova</h2>
+  
   <div class="folder-wrapper">
-    <div class="folder-header">FOLDER: KUHINJE</div>
+    <div class="folder-header">📂 KUHINJE</div>
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="KUHINJA.jpg" alt="Kuhinja"><p>Kuhinja po mjeri</p></div>
-      <div class="gallery-item"><img src="KUHINJA1.jpg" alt="Kuhinja 1"><p>Moderna Kuhinja</p></div>
-      <div class="gallery-item"><img src="KUHINJA2.jpg" alt="Kuhinja 2"><p>Kuhinja Design</p></div>
-      <div class="gallery-item"><img src="KUHINJAA1.jpg" alt="Kuhinja A1"><p>Kuhinja Premium</p></div>
+      <div class="gallery-item"><img src="KUHINJA.jpg"><p>Kuhinja 1</p></div>
+      <div class="gallery-item"><img src="KUHINJA1.jpg"><p>Kuhinja 2</p></div>
+      <div class="gallery-item"><img src="KUHINJA2.jpg"><p>Kuhinja 3</p></div>
+      <div class="gallery-item"><img src="KUHINJAA1.jpg"><p>Kuhinja Premium</p></div>
+    </div>
+  </div>
+
+  <div class="folder-wrapper">
+    <div class="folder-header">📂 KREVETI</div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="KREVET.jpg"><p>Krevet 1</p></div>
+      <div class="gallery-item"><img src="KREVET1.jpg"><p>Krevet 2</p></div>
+      <div class="gallery-item"><img src="KREVET2.jpg"><p>Krevet 3</p></div>
+    </div>
+  </div>
+
+  <div class="folder-wrapper">
+    <div class="folder-header">📂 ORMARI I PROZORI</div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="ORMAR.jpg"><p>Ormar 1</p></div>
+      <div class="gallery-item"><img src="ORMAR1.jpg"><p>Ormar 2</p></div>
+      <div class="gallery-item"><img src="ORMAR2.jpeg"><p>Klizni Ormar</p></div>
+      <div class="gallery-item"><img src="PROZOR.jpg"><p>Prozor</p></div>
+      <div class="gallery-item"><img src="STRIJER.jpg"><p>Stepenište</p></div>
+    </div>
+  </div>
+
+  <div class="folder-wrapper">
+    <div class="folder-header">📂 VRATA</div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="VRATA.jpg"><p>Vrata 1</p></div>
+      <div class="gallery-item"><img src="VRATA1.jpg"><p>Vrata 2</p></div>
+      <div class="gallery-item"><img src="VRATA2.jpg"><p>Vrata 3</p></div>
+      <div class="gallery-item"><img src="ULAZNA%20VRATA.jpg"><p>Ulazna Vrata</p></div>
+      <div class="gallery-item"><img src="SOBNA%20VRATA.png"><p>Sobna Vrata</p></div>
     </div>
   </div>
 </div>
 
-<div class="section" id="kreveti">
-  <div class="folder-wrapper">
-    <div class="folder-header">FOLDER: KREVETI</div>
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="KREVET.jpg" alt="Krevet"><p>Krevet 1</p></div>
-      <div class="gallery-item"><img src="KREVET1.jpg" alt="Krevet 1"><p>Krevet 2</p></div>
-      <div class="gallery-item"><img src="KREVET2.jpg" alt="Krevet 2"><p>Krevet 3</p></div>
+<div class="section" id="reviews">
+  <h2 id="reviews-h">Recenzije Klijenata</h2>
+  <div class="review-grid">
+    <div class="review-card">
+      <p>⭐⭐⭐⭐⭐<br><span id="rev1"></span></p>
+      <small>- Edin H.</small>
+    </div>
+    <div class="review-card">
+      <p>⭐⭐⭐⭐⭐<br><span id="rev2"></span></p>
+      <small>- Marija S.</small>
     </div>
   </div>
 </div>
 
-<div class="section" id="ormari">
-  <div class="folder-wrapper">
-    <div class="folder-header">FOLDER: ORMARI I OSTALO</div>
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="ORMAR.jpg" alt="Ormar"><p>Ormar 1</p></div>
-      <div class="gallery-item"><img src="ORMAR1.jpg" alt="Ormar 1"><p>Ormar 2</p></div>
-      <div class="gallery-item"><img src="ORMAR2.jpeg" alt="Ormar 2"><p>Ormar 3</p></div>
-      <div class="gallery-item"><img src="PROZOR.jpg" alt="Prozor"><p>Prozor</p></div>
-      <div class="gallery-item"><img src="STRIJER.jpg" alt="Strijer"><p>Stepenište</p></div>
-    </div>
-  </div>
-</div>
-
-<div class="section" id="vrata">
-  <div class="folder-wrapper">
-    <div class="folder-header">FOLDER: VRATA</div>
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="VRATA.jpg" alt="Vrata"><p>Vrata 1</p></div>
-      <div class="gallery-item"><img src="VRATA1.jpg" alt="Vrata 1"><p>Vrata 2</p></div>
-      <div class="gallery-item"><img src="VRATA2.jpg" alt="Vrata 2"><p>Vrata 3</p></div>
-      <div class="gallery-item"><img src="ULAZNA%20VRATA.jpg" alt="Ulazna Vrata"><p>Ulazna Vrata</p></div>
-      <div class="gallery-item"><img src="SOBNA%20VRATA.png" alt="Sobna Vrata"><p>Sobna Vrata</p></div>
-    </div>
-  </div>
+<div class="section" id="contact" style="text-align:center;">
+  <h2 id="contact-h">Kontakt</h2>
+  <p id="contact-text" style="font-size:1.3rem; font-weight:bold; color: #0066cc;"></p>
 </div>
 
 <footer>
-  <p>&copy; 2026 Stolarska Radnja. Sva prava pridržana.</p>
+  <p>&copy; 2026 Stolarska Radnja Jadranka Arsenijević. Lokacija: Lukavac, BiH.</p>
 </footer>
 
+<script>
+const content = {
+  ba: {
+    heroTitle: "Stolarska Radnja", heroSub: "Kvalitetna izrada namještaja po vašoj mjeri",
+    aboutH: "O nama", about: "Preko 20 godina iskustva u izradi vrhunskog namještaja od punog drveta i pločastih materijala. Naš rad u Lukavcu prepoznatljiv je po trajnosti i modernom dizajnu.",
+    galleryH: "Naši Radovi", reviewsH: "Šta kažu klijenti", 
+    rev1: "Izuzetno zadovoljan kuhinjom! Sve je urađeno precizno i u roku.", 
+    rev2: "Ormari su savršeni. Majstori su profesionalni i ljubazni.",
+    contactH: "Kontakt", contact: "📧 halilovicnusret8@gmail.com <br> 📞 +387 61 635 340"
+  },
+  en: {
+    heroTitle: "Carpentry Shop", heroSub: "Premium custom furniture",
+    aboutH: "About Us", about: "With over 20 years of experience, we create high-quality wood furniture in Lukavac, Bosnia. Our work is known for durability and modern style.",
+    galleryH: "Our Works", reviewsH: "Client Reviews", 
+    rev1: "Extremely happy with the kitchen! Everything was done precisely.", 
+    rev2: "The wardrobes are perfect. Professional and friendly craftsmen.",
+    contactH: "Contact", contact: "📧 halilovicnusret8@gmail.com <br> 📞 +387 61 635 340"
+  },
+  de: {
+    heroTitle: "Tischlerei", heroSub: "Hochwertige Möbel nach Maß",
+    aboutH: "Über uns", about: "Mit mehr als 20 Jahren Erfahrung fertigen wir in Lukavac erstklassige Holzmöbel. Unsere Arbeit steht für Qualität und modernes Design.",
+    galleryH: "Unsere Arbeiten", reviewsH: "Kundenbewertungen", 
+    rev1: "Sehr zufrieden mit der Küche! Alles wurde präzise erledigt.", 
+    rev2: "Die Schränke sind perfekt. Professionelle und freundliche Handwerker.",
+    contactH: "Kontakt", contact: "📧 halilovicnusret8@gmail.com <br> 📞 +387 61 635 340"
+  }
+};
+
+function setLanguage(lang) {
+  document.getElementById('hero-title').innerText = content[lang].heroTitle;
+  document.getElementById('hero-sub').innerText = content[lang].heroSub;
+  document.getElementById('about-h').innerText = content[lang].aboutH;
+  document.getElementById('about-text').innerText = content[lang].about;
+  document.getElementById('gallery-h').innerText = content[lang].galleryH;
+  document.getElementById('reviews-h').innerText = content[lang].reviewsH;
+  document.getElementById('rev1').innerText = content[lang].rev1;
+  document.getElementById('rev2').innerText = content[lang].rev2;
+  document.getElementById('contact-h').innerText = content[lang].contactH;
+  document.getElementById('contact-text').innerHTML = content[lang].contact;
+}
+setLanguage('ba');
+</script>
 </body>
 </html>
