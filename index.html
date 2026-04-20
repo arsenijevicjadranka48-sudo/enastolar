@@ -17,12 +17,12 @@
   .section {margin:50px auto; max-width:1100px; padding:0 20px;}
   h2 {text-align:center; border-bottom: 2px solid #ff9900; display: block; width: fit-content; margin: 0 auto 30px; padding-bottom: 5px; text-transform: uppercase;}
 
-  /* Folder stil za galeriju */
+  /* Stil za galeriju sa folderima */
   .folder-wrapper { background: #fff; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 30px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
   .folder-header { background: #f8f8f8; padding: 12px 20px; border-bottom: 1px solid #ddd; font-weight: bold; color: #444; }
   
   .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 15px; padding: 15px; }
-  .gallery-item { border-radius: 6px; overflow: hidden; background: #fff; border: 1px solid #eee; text-align: center; transition: 0.3s; }
+  .gallery-item { border-radius: 6px; overflow: hidden; background: #fff; border: 1px solid #eee; text-align: center; }
   .gallery-item img { width: 100%; height: 180px; object-fit: cover; display: block; }
   .gallery-item p { padding: 8px; margin: 0; font-size: 13px; font-weight: 600; }
 
@@ -30,8 +30,10 @@
   .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
   .review-card { background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 5px solid #ff9900; }
   
+  /* Dugmad za jezike */
   .lang-switch { text-align: center; margin: 20px 0; }
-  .lang-switch button { cursor: pointer; padding: 6px 16px; margin: 0 5px; border: 1px solid #ccc; background: #fff; border-radius: 4px; font-weight: bold; }
+  .lang-switch button { cursor: pointer; padding: 8px 20px; margin: 0 5px; border: 2px solid #ff9900; background: #fff; border-radius: 5px; font-weight: bold; transition: 0.3s; }
+  .lang-switch button:hover { background: #ff9900; color: #fff; }
   
   footer { background: #222; color: #fff; padding: 30px; text-align: center; margin-top: 50px; }
 </style>
@@ -50,7 +52,7 @@
 
 <section class="hero">
   <h1 id="hero-title">Stolarska Radnja</h1>
-  <p id="hero-sub">Kvalitet na prvom mjestu</p>
+  <p id="hero-sub">Vrhunska izrada namještaja po mjeri</p>
 </section>
 
 <div class="lang-switch">
@@ -100,9 +102,9 @@
   <div class="folder-wrapper">
     <div class="folder-header">📂 VRATA</div>
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="VRATA.jpg"><p>Sobna Vrata 1</p></div>
-      <div class="gallery-item"><img src="VRATA1.jpg"><p>Sobna Vrata 2</p></div>
-      <div class="gallery-item"><img src="VRATA2.jpg"><p>Sobna Vrata 3</p></div>
+      <div class="gallery-item"><img src="VRATA.jpg"><p>Vrata 1</p></div>
+      <div class="gallery-item"><img src="VRATA1.jpg"><p>Vrata 2</p></div>
+      <div class="gallery-item"><img src="VRATA2.jpg"><p>Vrata 3</p></div>
       <div class="gallery-item"><img src="ULAZNA%20VRATA.jpg"><p>Ulazna Vrata</p></div>
       <div class="gallery-item"><img src="SOBNA%20VRATA.png"><p>Sobna Vrata</p></div>
     </div>
@@ -129,33 +131,34 @@
 </div>
 
 <footer>
-  <p>&copy; 2026 Stolarska Radnja Ena. Lokacija: Lukavac.</p>
+  <p>&copy; 2026 Stolarska Radnja Ena. Lokacija: Lukavac, BiH.</p>
 </footer>
 
 <script>
+// Ovaj dio koda POPUNJAVA tekst sekcija "O nama" i "Recenzije"
 const content = {
   ba: {
-    heroTitle: "Stolarska Radnja", heroSub: "Kvalitetna izrada po vašoj mjeri",
-    aboutH: "O nama", about: "Sa više od 20 godina iskustva, bavimo se izradom unikatnog namještaja od drveta i pločastih materijala u Lukavcu.",
+    heroTitle: "Stolarska Radnja", heroSub: "Kvalitetna izrada namještaja po vašoj mjeri",
+    aboutH: "O nama", about: "Preko 20 godina iskustva u izradi vrhunskog namještaja od punog drveta i pločastih materijala u Lukavcu. Naš rad prepoznatljiv je po trajnosti i modernom dizajnu.",
     galleryH: "Naši Radovi", reviewsH: "Šta kažu klijenti", 
     rev1: "Izuzetno zadovoljan kuhinjom! Sve je urađeno precizno i u roku.", 
     rev2: "Ormari su savršeni. Majstori su profesionalni i ljubazni.",
     contactH: "Kontakt", contact: "📧 halilovicnusret8@gmail.com <br> 📞 +387 61 635 340"
   },
   en: {
-    heroTitle: "Carpentry Shop", heroSub: "Quality custom furniture",
+    heroTitle: "Carpentry Shop", heroSub: "Premium custom furniture",
     aboutH: "About Us", about: "With over 20 years of experience, we create high-quality wood furniture in Lukavac, Bosnia.",
-    galleryH: "Our Works", reviewsH: "Reviews", 
+    galleryH: "Our Works", reviewsH: "Client Reviews", 
     rev1: "Extremely happy with the kitchen! Everything was done precisely.", 
-    rev2: "The wardrobes are perfect. Professional and friendly craftsmen.",
+    rev2: "The wardrobes are perfect. Professional craftsmen.",
     contactH: "Contact", contact: "📧 halilovicnusret8@gmail.com <br> 📞 +387 61 635 340"
   },
   de: {
-    heroTitle: "Tischlerei", heroSub: "Maßgefertigte Möbel",
+    heroTitle: "Tischlerei", heroSub: "Hochwertige Möbel nach Maß",
     aboutH: "Über uns", about: "Mit mehr als 20 Jahren Erfahrung fertigen wir in Lukavac erstklassige Holzmöbel.",
-    galleryH: "Galerie", reviewsH: "Bewertungen", 
+    galleryH: "Unsere Arbeiten", reviewsH: "Kundenbewertungen", 
     rev1: "Sehr zufrieden mit der Küche! Alles wurde präzise erledigt.", 
-    rev2: "Die Schränke sind perfekt. Professionelle und freundliche Handwerker.",
+    rev2: "Die Schränke sind perfekt. Sehr professionell.",
     contactH: "Kontakt", contact: "📧 halilovicnusret8@gmail.com <br> 📞 +387 61 635 340"
   }
 };
@@ -172,6 +175,7 @@ function setLanguage(lang) {
   document.getElementById('contact-h').innerText = content[lang].contactH;
   document.getElementById('contact-text').innerHTML = content[lang].contact;
 }
+// Pokretanje početnog jezika (BA) pri učitavanju
 setLanguage('ba');
 </script>
 </body>
