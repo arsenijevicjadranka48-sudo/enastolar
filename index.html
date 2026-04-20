@@ -7,44 +7,76 @@
 
 <style>
   html {
-    scroll-padding-top: 100px; /* visina sticky headera */
+    scroll-padding-top: 80px; 
     scroll-behavior: smooth;
   }
 
-  body {font-family: Arial, sans-serif; background:#f9f9f9; margin:0; padding:0; color:#333; line-height:1.6;}
+  body {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f9f9f9; margin:0; padding:0; color:#333; line-height:1.6;}
 
   header {
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:15px 30px;
+    padding:10px 5%;
     background:#fff;
     box-shadow:0 4px 8px rgba(0,0,0,0.1);
     position:sticky;
     top:0;
-    z-index:100;
+    z-index:1000;
   }
 
-  header img {width:120px;}
-  nav.header-nav a {margin:0 15px; text-decoration:none; color:#0066cc; font-weight:bold; transition:color 0.3s;}
+  header img {height:60px;}
+  nav.header-nav a {margin:0 15px; text-decoration:none; color:#333; font-weight:600; transition:color 0.3s;}
   nav.header-nav a:hover {color:#ff9900;}
-  @media(max-width:768px){header{flex-direction:column; gap:10px;} nav.header-nav{display:flex; flex-wrap:wrap; justify-content:center;}}
 
-  .section {margin:60px auto; max-width:1000px; text-align:center; padding:0 20px;}
-  h2 {color:#333; margin-bottom:25px;}
-  p {font-size:16px; color:#555;}
-  .card-container {display:flex; flex-wrap:wrap; justify-content:center; gap:20px;}
-  .card {background:#fff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s; padding:20px; max-width:300px; text-align:left;}
-  .card:hover {transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.2);}
-  .card img {width:100%; border-radius:8px;}
-  .card p {margin-top:10px; font-size:15px; line-height:1.5;}
-  .review-author {margin-top:8px; font-weight:bold; color:#0066cc;}
-  .back-top {display:inline-block; margin-top:20px; padding:8px 16px; background:#0066cc; color:#fff; border-radius:5px; text-decoration:none; transition:background 0.3s;}
+  /* Hero Sekcija */
+  .hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1581428982868-e410dd047a90?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+  }
+  .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+  .hero p { font-size: 1.2rem; max-width: 700px; }
+
+  .section {margin:80px auto; max-width:1100px; text-align:center; padding:0 20px;}
+  h2 {color:#222; margin-bottom:15px; font-size: 2.2rem; position: relative; padding-bottom: 10px;}
+  h2::after { content: ''; width: 60px; height: 3px; background: #ff9900; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+  
+  .intro-text { max-width: 800px; margin: 0 auto 40px; font-size: 1.1rem; color: #666; }
+
+  .card-container {display:flex; flex-wrap:wrap; justify-content:center; gap:25px; margin-top: 30px;}
+  .card {background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.08); transition:transform 0.3s; padding:0; overflow: hidden; max-width:280px; text-align:left;}
+  .card:hover {transform:translateY(-10px);}
+  .card img {width:100%; height: 200px; object-fit: cover;}
+  .card-content { padding: 20px; }
+  .card p {margin:0; font-size:15px; color:#555;}
+  
+  .review-author {margin-top:12px; font-weight:bold; color:#0066cc; font-size: 0.9rem;}
+  
+  .back-top {display:inline-block; margin-top:30px; padding:10px 20px; background:#333; color:#fff; border-radius:5px; text-decoration:none; transition:0.3s;}
   .back-top:hover {background:#ff9900;}
-  footer {margin-top:60px; padding:20px; background:#fff; text-align:center; color:#777; font-size:14px; box-shadow:0 -4px 8px rgba(0,0,0,0.05);}
-  footer a {color:#0066cc; text-decoration:none;}
-  .lang-switch button {background:#0066cc; border:none; color:white; padding:6px 12px; margin:0 5px; border-radius:5px; cursor:pointer; transition:background 0.3s;}
-  .lang-switch button:hover {background:#ff9900;}
+
+  footer {margin-top:80px; padding:40px 20px; background:#222; text-align:center; color:#fff;}
+  footer a {color:#ff9900; text-decoration:none;}
+
+  .lang-switch { position: absolute; right: 5%; top: 85px; z-index: 500; }
+  .lang-switch button {background:#fff; border:1px solid #ddd; color:#333; padding:5px 10px; margin:0 2px; border-radius:4px; cursor:pointer; font-size: 12px;}
+  .lang-switch button:hover {background:#f0f0f0;}
+
+  @media(max-width:768px){
+    header{flex-direction:column; padding: 20px;} 
+    nav.header-nav{margin-top: 15px;}
+    .hero h1 { font-size: 2rem; }
+    .lang-switch { position: static; margin-top: 10px; text-align: center; }
+  }
 </style>
 </head>
 <body id="top">
@@ -60,115 +92,171 @@
   </nav>
 </header>
 
-<div class="lang-switch" style="text-align:center; margin-top:20px;">
-  <button onclick="setLanguage('ba')">Bosanski</button>
-  <button onclick="setLanguage('en')">English</button>
-  <button onclick="setLanguage('de')">Deutsch</button>
+<div class="lang-switch">
+  <button onclick="setLanguage('ba')">BA</button>
+  <button onclick="setLanguage('en')">EN</button>
+  <button onclick="setLanguage('de')">DE</button>
 </div>
+
+<section class="hero">
+  <h1 id="hero-title">Namještaj koji priča priču</h1>
+  <p id="hero-sub">Vrhunska izrada od drveta prilagođena vašem domu i životnom stilu.</p>
+</section>
 
 <div class="section" id="about">
   <h2>O nama</h2>
-  <p id="about-text"></p>
+  <p class="intro-text" id="about-text"></p>
   <a href="#top" class="back-top">Nazad na početak</a>
 </div>
 
-<div class="section" id="services">
-  <h2>Usluge</h2>
-  <ul id="services-list" style="list-style:none; padding:0; text-align:left; max-width:700px; margin:0 auto;"></ul>
-  <a href="#top" class="back-top">Nazad na početak</a>
+<div class="section" id="services" style="background: #eee; padding: 60px 20px; max-width: 100%;">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <h2>Naše Usluge</h2>
+    <p class="intro-text" id="services-intro">Nudimo širok spektar stolarskih rješenja za vaš dom ili poslovni prostor.</p>
+    <ul id="services-list" style="list-style:none; padding:0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align:left;"></ul>
+  </div>
 </div>
 
 <div class="section" id="gallery">
-  <h2>Galerija</h2>
+  <h2>Galerija Radova</h2>
+  <p class="intro-text">Pogledajte neke od naših nedavnih projekata koji krase domove naših zadovoljnih klijenata.</p>
   <div class="card-container">
-    <div class="card"><img src="KREVET.jpg" alt="Krevet"><p id="gallery1"></p></div>
-    <div class="card"><img src="KREVET1.jpg" alt="Krevet1"><p id="gallery2"></p></div>
-    <div class="card"><img src="KUHINJA.jpg" alt="Kuhinja"><p id="gallery3"></p></div>
-    <div class="card"><img src="KUHINJA2.jpg" alt="Kuhinja2"><p id="gallery4"></p></div>
+    <div class="card"><img src="KREVET.jpg" alt="Krevet"><div class="card-content"><p id="gallery1"></p></div></div>
+    <div class="card"><img src="KREVET1.jpg" alt="Krevet1"><div class="card-content"><p id="gallery2"></p></div></div>
+    <div class="card"><img src="KUHINJA.jpg" alt="Kuhinja"><div class="card-content"><p id="gallery3"></p></div></div>
+    <div class="card"><img src="KUHINJA2.jpg" alt="Kuhinja2"><div class="card-content"><p id="gallery4"></p></div></div>
   </div>
   <a href="#top" class="back-top">Nazad na početak</a>
 </div>
 
 <div class="section" id="reviews">
-  <h2>Recenzije naših klijenata</h2>
+  <h2>Šta kažu o nama</h2>
   <div class="card-container">
-    <div class="card"><p id="review1"></p><div class="review-author">- Ana K.</div></div>
-    <div class="card"><p id="review2"></p><div class="review-author">- Marko P.</div></div>
+    <div class="card"><div class="card-content"><p id="review1"></p><div class="review-author">- Ana K.</div></div></div>
+    <div class="card"><div class="card-content"><p id="review2"></p><div class="review-author">- Marko P.</div></div></div>
   </div>
-  <a href="#top" class="back-top">Nazad na početak</a>
 </div>
 
 <div class="section" id="contact">
-  <h2>Kontakt</h2>
-  <p id="contact-text"></p>
-  <a href="#top" class="back-top">Nazad na početak</a>
+  <h2>Kontaktirajte nas</h2>
+  <p class="intro-text">Spremni ste za novi komad namještaja? Pišite nam ili nas nazovite za besplatne konsultacije i ponudu.</p>
+  <div style="background: #fff; padding: 30px; border-radius: 10px; display: inline-block; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+     <p id="contact-text" style="font-weight: bold; font-size: 1.2rem;"></p>
+  </div>
 </div>
 
 <footer>
-  &copy; 2025 Stolarska Radnja. Sva prava pridržana. | <a href="#contact">Kontakt</a>
+  <p>&copy; 2026 Stolarska Radnja Ena. Sva prava pridržana.</p>
+  <p>Lokacija: Lukavac, Bosna i Hercegovina</p>
 </footer>
 
 <script>
 const content = {
   ba: {
-    about: "Naša stolarska radnja postoji već više od 20 godina, pružajući usluge izrade namještaja po mjeri sa fokusom na kvalitet, estetiku i funkcionalnost.",
+    heroTitle: "Namještaj koji priča priču",
+    heroSub: "Vrhunska izrada od drveta prilagođena vašem domu i životnom stilu.",
+    about: "Sa tradicijom dužom od dvije decenije, naša radnja spaja starinske stolarske vještine sa modernim dizajnom. Svaki komad drveta pažljivo biramo kako bismo osigurali dugovječnost i unikatan izgled vašeg interijera. Naš cilj nije samo napraviti namještaj, već stvoriti ambijent u kojem ćete uživati godinama.",
+    servicesIntro: "Od inicijalne ideje do finalne montaže, tu smo da svaki milimetar vašeg prostora iskoristimo pametno.",
     services: [
-      "Izrada kuhinja prema željama kupaca, od modernih do klasičnih stilova.",
-      "Kreveti i stolovi na razvlačenje – praktični i dugotrajni.",
-      "Ugradbena vrata i ormari – stilizirani komadi prilagođeni prostoru.",
-      "Restauracija starog namještaja – čuvanje estetike i funkcionalnosti.",
-      "Custom rješenja – namještaj po individualnim specifikacijama."
+      "✅ <strong>Kuhinje po mjeri:</strong> Projektovanje i izrada modernih, funkcionalnih kuhinja sa najsavremenijim okovima.",
+      "✅ <strong>Spavaće sobe:</strong> Kreveti od punog drveta i plakari koji maksimiziraju vaš prostor za pohranu.",
+      "✅ <strong>Dnevni boravci:</strong> Unikatne komode, police i stolovi koji postaju centralni dio vašeg doma.",
+      "✅ <strong>Vrata i stepeništa:</strong> Izrada unutrašnjih vrata i oblaganje stepeništa najkvalitetnijim materijalima.",
+      "✅ <strong>Restauracija:</strong> Vraćamo stari sjaj vašem dragocjenom antiknom namještaju."
     ],
     gallery: [
-      "Krevet od masivnog drveta s ladicama za pohranu – praktično i estetski.",
-      "Dvostruki krevet s modernim dizajnom i dodatnim ladicama.",
-      "Kuhinja po mjeri s visokokvalitetnim frontama i radnim površinama.",
-      "Minimalistička kuhinja s elegantnim dizajnom i praktičnim skladištenjem."
+      "Masivni bračni krevet sa ugrađenim ladicama za maksimalnu uštedu prostora.",
+      "Moderni dizajn kreveta sa tapaciranim uzglavljem i prirodnom teksturom drveta.",
+      "Prostrana porodična kuhinja sa 'soft-close' mehanizmima i elegantnim finišem.",
+      "Kompaktna kuhinja idealna za manje prostore, rađena po specifičnim mjerama."
     ],
     reviews: [
-      "⭐️⭐️⭐️⭐️⭐️ Izvrsna izrada kuhinje! Tim je vrlo profesionalan i pažljiv.",
-      "⭐️⭐️⭐️⭐️⭐️ Krevet je udoban i kvalitetan. Montaža jednostavna."
+      "⭐️⭐️⭐️⭐️⭐️ Prezadovoljna sam izradom kuhinje. Sve je završeno u dogovorenom roku, a kvalitet je iznad svih očekivanja!",
+      "⭐️⭐️⭐️⭐️⭐️ Naručili smo krevet od punog drveta. Stabilan je, ne škripi i izgleda fenomenalno u sobi. Preporuka svima!"
     ],
-    contact: "Za više informacija kontaktirajte nas putem e-maila: halilovicnusret8@gmail.com ili telefonom: +38761635340."
+    contact: "📧 halilovicnusret8@gmail.com <br> 📞 +387 61 635 340"
   },
   en: {
-    about: "Our carpentry workshop has been providing custom furniture services for over 20 years, focusing on quality, aesthetics, and functionality.",
+    heroTitle: "Furniture That Tells a Story",
+    heroSub: "Premium woodwork tailored to your home and lifestyle.",
+    about: "With a tradition spanning over two decades, our workshop combines traditional carpentry skills with modern design. We carefully select every piece of wood to ensure longevity and a unique look for your interior.",
+    servicesIntro: "From initial idea to final installation, we are here to use every millimeter of your space wisely.",
     services: [
-      "Custom kitchens designed according to customer preferences, from modern to classic styles.",
-      "Expandable beds and tables – practical and durable.",
-      "Built-in doors and wardrobes – stylish pieces adapted to space.",
-      "Furniture restoration – preserving aesthetics and functionality.",
-      "Custom solutions – furniture according to individual specifications."
+      "✅ <strong>Custom Kitchens:</strong> Design and manufacture of modern, functional kitchens.",
+      "✅ <strong>Bedrooms:</strong> Solid wood beds and wardrobes that maximize storage.",
+      "✅ <strong>Living Rooms:</strong> Unique dressers, shelves, and tables.",
+      "✅ <strong>Doors & Stairs:</strong> Interior doors and stair casing with top-quality materials.",
+      "✅ <strong>Restoration:</strong> We restore the old glory of your precious antique furniture."
     ],
     gallery: [
-      "Solid wood bed with storage drawers – practical and aesthetic.",
-      "Double bed with modern design and extra drawers.",
-      "Custom kitchen with high-quality fronts and countertops.",
-      "Minimalist kitchen with elegant design and practical storage."
+      "Solid double bed with built-in drawers for maximum space saving.",
+      "Modern bed design with upholstered headboard and natural wood texture.",
+      "Spacious family kitchen with soft-close mechanisms and elegant finish.",
+      "Compact kitchen ideal for smaller spaces, made to specific measurements."
     ],
     reviews: [
-      "⭐️⭐️⭐️⭐️⭐️ Excellent kitchen craftsmanship! The team is very professional and attentive.",
-      "⭐️⭐️⭐️⭐️⭐️ The bed is comfortable and high quality. Easy installation."
+      "⭐️⭐️⭐️⭐️⭐️ Excellent kitchen craftsmanship! Everything was finished on time and the quality is superb.",
+      "⭐️⭐️⭐️⭐️⭐️ We ordered a solid wood bed. It's stable, silent, and looks amazing. Highly recommended!"
     ],
-    contact: "For more information, contact us via email: halilovicnusret8@gmail.com or phone: +38761635340."
+    contact: "📧 halilovicnusret8@gmail.com <br> 📞 +387 61 635 340"
   },
   de: {
-    about: "Unsere Tischlerei bietet seit über 20 Jahren maßgeschneiderte Möbelservices an, mit Fokus auf Qualität, Ästhetik und Funktionalität.",
+    heroTitle: "Möbel, die eine Geschichte erzählen",
+    heroSub: "Erstklassige Holzverarbeitung, angepasst an Ihr Zuhause.",
+    about: "Mit einer über zwanzigjährigen Tradition verbindet unsere Werkstatt traditionelles Handwerk mit modernem Design. Wir wählen jedes Stück Holz sorgfältig aus.",
+    servicesIntro: "Von der ersten Idee bis zur endgültigen Montage nutzen wir jeden Millimeter Ihres Raumes sinnvoll.",
     services: [
-      "Küchen nach Maß, von modern bis klassisch.",
-      "Ausziehbare Betten und Tische – praktisch und langlebig.",
-      "Einbauschränke und Türen – stilvolle Stücke passend zum Raum.",
-      "Möbelrestaurierung – Ästhetik und Funktionalität erhalten.",
-      "Maßgeschneiderte Lösungen – Möbel nach individuellen Vorgaben."
+      "✅ <strong>Küchen nach Maß:</strong> Planung und Herstellung moderner, funktionaler Küchen.",
+      "✅ <strong>Schlafzimmer:</strong> Massivholzbetten und Schränke für maximalen Stauraum.",
+      "✅ <strong>Wohnzimmer:</strong> Einzigartige Kommoden, Regale und Tische.",
+      "✅ <strong>Türen & Treppen:</strong> Innentüren und Treppenverkleidungen aus hochwertigen Materialien.",
+      "✅ <strong>Restaurierung:</strong> Wir verleihen Ihren antiken Möbeln neuen Glanz."
     ],
     gallery: [
-      "Massivholz-Bett mit Schubladen – praktisch und ästhetisch.",
-      "Doppelbett mit modernem Design und zusätzlichen Schubladen.",
-      "Maßgeschneiderte Küche mit hochwertigen Fronten und Arbeitsplatten.",
-      "Minimalistische Küche mit elegantem Design und praktischem Stauraum."
+      "Massives Doppelbett mit integrierten Schubladen für maximale Platzersparnis.",
+      "Modernes Bettdesign mit gepolstertem Kopfteil und natürlicher Holztextur.",
+      "Geräumige Familienküche mit Soft-Close-Mechanismen und elegantem Finish.",
+      "Kompakte Küche, ideal für kleinere Räume, nach spezifischen Maßen gefertigt."
     ],
     reviews: [
-      "⭐️⭐️⭐️⭐️⭐️ Ausgezeichnete Küchenarbeit! Das Team ist sehr professionell und aufmerksam.",
-      "⭐️⭐️⭐️⭐️⭐️ Das Bett ist bequem und hochwertig. Einfache Montage."
+      "⭐️⭐️⭐️⭐️⭐️ Hervorragende Küchenarbeit! Alles wurde pünktlich fertiggestellt und die Qualität ist top.",
+      "⭐️⭐️⭐️⭐️⭐️ Wir haben ein Massivholzbett bestellt. Es ist stabil und sieht toll aus. Sehr empfehlenswert!"
     ],
-    contact: "Für weitere Informationen kontaktieren Sie uns per E-Mail: halil
+    contact: "📧 halilovicnusret8@gmail.com <br> 📞 +387 61 635 340"
+  }
+};
+
+function setLanguage(lang) {
+  document.getElementById('hero-title').innerText = content[lang].heroTitle;
+  document.getElementById('hero-sub').innerText = content[lang].heroSub;
+  document.getElementById('about-text').innerText = content[lang].about;
+  document.getElementById('services-intro').innerText = content[lang].servicesIntro;
+  document.getElementById('contact-text').innerHTML = content[lang].contact;
+
+  const servicesList = document.getElementById('services-list');
+  servicesList.innerHTML = "";
+  content[lang].services.forEach(s => {
+    const li = document.createElement('li');
+    li.innerHTML = s;
+    li.style.background = "#fff";
+    li.style.padding = "15px";
+    li.style.borderRadius = "8px";
+    li.style.boxShadow = "0 2px 5px rgba(0,0,0,0.05)";
+    servicesList.appendChild(li);
+  });
+
+  document.getElementById('gallery1').innerText = content[lang].gallery[0];
+  document.getElementById('gallery2').innerText = content[lang].gallery[1];
+  document.getElementById('gallery3').innerText = content[lang].gallery[2];
+  document.getElementById('gallery4').innerText = content[lang].gallery[3];
+
+  document.getElementById('review1').innerText = content[lang].reviews[0];
+  document.getElementById('review2').innerText = content[lang].reviews[1];
+}
+
+// Inicijalno postavljanje na bosanski
+setLanguage('ba');
+</script>
+
+</body>
+</html>
