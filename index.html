@@ -18,24 +18,31 @@
   h2 {text-align:center; border-bottom: 2px solid #ff9900; display: block; width: fit-content; margin: 0 auto 30px; padding-bottom: 5px; text-transform: uppercase;}
 
   .lang-switch { text-align: center; margin: 20px 0; }
-  .lang-switch button { cursor: pointer; padding: 10px 25px; margin: 0 5px; border: 2px solid #ff9900; background: #fff; border-radius: 5px; font-weight: bold; font-size: 16px; }
+  .lang-switch button { cursor: pointer; padding: 10px 25px; margin: 0 5px; border: 2px solid #ff9900; background: #fff; border-radius: 5px; font-weight: bold; }
 
-  /* Folderi */
+  /* Galerija */
   .folder-wrapper { background: #fff; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 30px; overflow: hidden; }
   .folder-header { background: #f8f8f8; padding: 12px 20px; border-bottom: 1px solid #ddd; font-weight: bold; }
   
   .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 15px; padding: 15px; }
-  .gallery-item { border-radius: 6px; border: 1px solid #eee; text-align: center; background: #fff; }
+  .gallery-item { border-radius: 6px; border: 1px solid #eee; text-align: center; background: #fff; cursor: pointer; transition: 0.3s; }
+  .gallery-item:hover { transform: scale(1.02); }
   .gallery-item img { width: 100%; height: 180px; object-fit: cover; display: block; }
   .gallery-item p { padding: 8px; margin: 0; font-size: 13px; font-weight: 600; }
 
+  /* MODAL ZA UVEĆANJE SLIKE */
+  #imageModal { display: none; position: fixed; z-index: 2000; padding-top: 50px; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); }
+  #modalImg { margin: auto; display: block; max-width: 90%; max-height: 80vh; border-radius: 5px; }
+  .close-modal { position: absolute; top: 15px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; }
+
   .review-card { background: #fff; padding: 20px; border-radius: 8px; border-left: 5px solid #ff9900; margin-bottom: 15px; }
+  footer { background: #222; color: #fff; padding: 30px; text-align: center; }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo"><strong>Logo</strong></div>
+  <div class="logo"><img src="eena.png" alt="Logo"></div>
   <nav>
     <a href="#about">O nama</a>
     <a href="#gallery">Galerija</a>
@@ -66,19 +73,25 @@
   <div class="folder-wrapper">
     <div class="folder-header">📂 KUHINJE</div>
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="KUHINJA.jpg"><p>Kuhinja 1</p></div>
-      <div class="gallery-item"><img src="KUHINJA1.jpg"><p>Kuhinja 2</p></div>
-      <div class="gallery-item"><img src="KUHINJA2.jpg"><p>Kuhinja 3</p></div>
+      <div class="gallery-item" onclick="openModal(this)"><img src="KUHINJA.jpg"><p>Kuhinja 1</p></div>
+      <div class="gallery-item" onclick="openModal(this)"><img src="KUHINJA1.jpg"><p>Kuhinja 2</p></div>
+      <div class="gallery-item" onclick="openModal(this)"><img src="KUHINJA2.jpg"><p>Kuhinja 3</p></div>
+      <div class="gallery-item" onclick="openModal(this)"><img src="KUHINJAA1.jpg"><p>Kuhinja Premium</p></div>
     </div>
   </div>
 
   <div class="folder-wrapper">
     <div class="folder-header">📂 VRATA</div>
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="VRATA.jpg"><p>Vrata 1</p></div>
-      <div class="gallery-item"><img src="ULAZNA%20VRATA.jpg"><p>Ulazna Vrata</p></div>
+      <div class="gallery-item" onclick="openModal(this)"><img src="VRATA.jpg"><p>Sobna Vrata</p></div>
+      <div class="gallery-item" onclick="openModal(this)"><img src="ULAZNA%20VRATA.jpg"><p>Ulazna Vrata</p></div>
     </div>
   </div>
+</div>
+
+<div id="imageModal">
+  <span class="close-modal" onclick="closeModal()">&times;</span>
+  <img id="modalImg">
 </div>
 
 <div class="section" id="reviews">
@@ -90,32 +103,43 @@
 </div>
 
 <div class="section" id="contact" style="text-align:center;">
-  <h2 id="contact-h">441T</h2>
-  <p id="contact-text" style="font-weight:bold;">📧 halilovicnusret8@gmail.com <br> 📞 +387 61 635 340</p>
+  <h2 id="contact-h">KONTAKT</h2>
+  <p id="contact-text">📧 halilovicnusret8@gmail.com <br> 📞 +387 61 635 340</p>
 </div>
 
+<footer>
+  <p>&copy; 2026 Stolarska Radnja. Lokacija: Lukavac, BiH.</p>
+</footer>
+
 <script>
+// Funkcije za uvećanje slike
+function openModal(element) {
+  var modal = document.getElementById("imageModal");
+  var modalImg = document.getElementById("modalImg");
+  modal.style.display = "block";
+  modalImg.src = element.getElementsByTagName('img')[0].src;
+}
+
+function closeModal() {
+  document.getElementById("imageModal").style.display = "none";
+}
+
+// Jezici
 const content = {
   ba: {
     heroTitle: "Stolarska Radnja", heroSub: "Kvalitetna izrada po vašoj mjeri",
     aboutH: "O NAMA", about: "Sa više od 20 godina iskustva, bavimo se izradom unikatnog namještaja od drveta i pločastih materijala u Lukavcu.",
-    galleryH: "NAŠI RADOVI", reviewsH: "RECENZIJE", contactH: "KONTAKT",
-    rev1: "Vrhunska usluga i precizna izrada.",
-    contact: "📧 halilovicnusret8@gmail.com <br> 📞 +387 64 4179 441"
+    galleryH: "NAŠI RADOVI", reviewsH: "RECENZIJE", contactH: "KONTAKT"
   },
   en: {
     heroTitle: "Carpentry Shop", heroSub: "Custom made furniture",
-    aboutH: "ABOUT US", about: "With over 20 years of experience, we create unique furniture in Lukavac.",
-    galleryH: "OUR WORK", reviewsH: "REVIEWS", contactH: "CONTACT",
-    rev1: "Excellent service and precision.",
-    contact: "📧 halilovicnusret8@gmail.com <br> 📞 +387 64 4179 441"
+    aboutH: "ABOUT US", about: "With over 20 years of experience, we create high-quality custom furniture in Lukavac.",
+    galleryH: "OUR WORK", reviewsH: "REVIEWS", contactH: "CONTACT"
   },
   de: {
     heroTitle: "Tischlerei", heroSub: "Möbel nach Maß",
-    aboutH: "ÜBER UNS", about: "Mit über 20 Jahren Erfahrung fertigen wir einzigartige Möbel u Lukavac.",
-    galleryH: "UNSERE ARBEITEN", reviewsH: "BEWERTUNGEN", contactH: "KONTAKT",
-    rev1: "Top Service und Präzision.",
-    contact: "📧 halilovicnusret8@gmail.com <br> 📞 +387 64 4179 441"
+    aboutH: "ÜBER UNS", about: "Mit über 20 Jahren Erfahrung fertigen wir hochwertige Möbel in Lukavac.",
+    galleryH: "UNSERE ARBEITEN", reviewsH: "BEWERTUNGEN", contactH: "KONTAKT"
   }
 };
 
@@ -126,9 +150,7 @@ function setLanguage(lang) {
   document.getElementById('about-text').innerText = content[lang].about;
   document.getElementById('gallery-h').innerText = content[lang].galleryH;
   document.getElementById('reviews-h').innerText = content[lang].reviewsH;
-  document.getElementById('rev1').innerText = content[lang].rev1;
   document.getElementById('contact-h').innerText = content[lang].contactH;
-  document.getElementById('contact-text').innerHTML = content[lang].contact;
 }
 </script>
 </body>
