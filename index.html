@@ -17,15 +17,14 @@
   .section {margin:50px auto; max-width:1100px; padding:0 20px;}
   h2 {text-align:center; border-bottom: 2px solid #ff9900; display: block; width: fit-content; margin: 0 auto 30px; padding-bottom: 5px; text-transform: uppercase;}
 
-  /* Stil za Foldere u galeriji */
+  /* Folder stil za galeriju */
   .folder-wrapper { background: #fff; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 30px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
   .folder-header { background: #f8f8f8; padding: 12px 20px; border-bottom: 1px solid #ddd; font-weight: bold; color: #444; }
   
   .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 15px; padding: 15px; }
   .gallery-item { border-radius: 6px; overflow: hidden; background: #fff; border: 1px solid #eee; text-align: center; transition: 0.3s; }
-  .gallery-item:hover { transform: translateY(-5px); }
   .gallery-item img { width: 100%; height: 180px; object-fit: cover; display: block; }
-  .gallery-item p { padding: 8px; margin: 0; font-size: 13px; font-weight: 600; background: #fdfdfd; }
+  .gallery-item p { padding: 8px; margin: 0; font-size: 13px; font-weight: 600; }
 
   /* Recenzije */
   .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
@@ -51,7 +50,7 @@
 
 <section class="hero">
   <h1 id="hero-title">Stolarska Radnja</h1>
-  <p id="hero-sub">Vrhunska izrada namještaja po mjeri</p>
+  <p id="hero-sub">Kvalitet na prvom mjestu</p>
 </section>
 
 <div class="lang-switch">
@@ -101,9 +100,9 @@
   <div class="folder-wrapper">
     <div class="folder-header">📂 VRATA</div>
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="VRATA.jpg"><p>Vrata 1</p></div>
-      <div class="gallery-item"><img src="VRATA1.jpg"><p>Vrata 2</p></div>
-      <div class="gallery-item"><img src="VRATA2.jpg"><p>Vrata 3</p></div>
+      <div class="gallery-item"><img src="VRATA.jpg"><p>Sobna Vrata 1</p></div>
+      <div class="gallery-item"><img src="VRATA1.jpg"><p>Sobna Vrata 2</p></div>
+      <div class="gallery-item"><img src="VRATA2.jpg"><p>Sobna Vrata 3</p></div>
       <div class="gallery-item"><img src="ULAZNA%20VRATA.jpg"><p>Ulazna Vrata</p></div>
       <div class="gallery-item"><img src="SOBNA%20VRATA.png"><p>Sobna Vrata</p></div>
     </div>
@@ -111,7 +110,7 @@
 </div>
 
 <div class="section" id="reviews">
-  <h2 id="reviews-h">Recenzije Klijenata</h2>
+  <h2 id="reviews-h">Recenzije</h2>
   <div class="review-grid">
     <div class="review-card">
       <p>⭐⭐⭐⭐⭐<br><span id="rev1"></span></p>
@@ -119,7 +118,7 @@
     </div>
     <div class="review-card">
       <p>⭐⭐⭐⭐⭐<br><span id="rev2"></span></p>
-      <small>- Marija S.</small>
+      <small>- Nadija V.</small>
     </div>
   </div>
 </div>
@@ -130,31 +129,31 @@
 </div>
 
 <footer>
-  <p>&copy; 2026 Stolarska Radnja Jadranka Arsenijević. Lokacija: Lukavac, BiH.</p>
+  <p>&copy; 2026 Stolarska Radnja Ena. Lokacija: Lukavac.</p>
 </footer>
 
 <script>
 const content = {
   ba: {
-    heroTitle: "Stolarska Radnja", heroSub: "Kvalitetna izrada namještaja po vašoj mjeri",
-    aboutH: "O nama", about: "Preko 20 godina iskustva u izradi vrhunskog namještaja od punog drveta i pločastih materijala. Naš rad u Lukavcu prepoznatljiv je po trajnosti i modernom dizajnu.",
+    heroTitle: "Stolarska Radnja", heroSub: "Kvalitetna izrada po vašoj mjeri",
+    aboutH: "O nama", about: "Sa više od 20 godina iskustva, bavimo se izradom unikatnog namještaja od drveta i pločastih materijala u Lukavcu.",
     galleryH: "Naši Radovi", reviewsH: "Šta kažu klijenti", 
     rev1: "Izuzetno zadovoljan kuhinjom! Sve je urađeno precizno i u roku.", 
     rev2: "Ormari su savršeni. Majstori su profesionalni i ljubazni.",
     contactH: "Kontakt", contact: "📧 halilovicnusret8@gmail.com <br> 📞 +387 61 635 340"
   },
   en: {
-    heroTitle: "Carpentry Shop", heroSub: "Premium custom furniture",
-    aboutH: "About Us", about: "With over 20 years of experience, we create high-quality wood furniture in Lukavac, Bosnia. Our work is known for durability and modern style.",
-    galleryH: "Our Works", reviewsH: "Client Reviews", 
+    heroTitle: "Carpentry Shop", heroSub: "Quality custom furniture",
+    aboutH: "About Us", about: "With over 20 years of experience, we create high-quality wood furniture in Lukavac, Bosnia.",
+    galleryH: "Our Works", reviewsH: "Reviews", 
     rev1: "Extremely happy with the kitchen! Everything was done precisely.", 
     rev2: "The wardrobes are perfect. Professional and friendly craftsmen.",
     contactH: "Contact", contact: "📧 halilovicnusret8@gmail.com <br> 📞 +387 61 635 340"
   },
   de: {
-    heroTitle: "Tischlerei", heroSub: "Hochwertige Möbel nach Maß",
-    aboutH: "Über uns", about: "Mit mehr als 20 Jahren Erfahrung fertigen wir in Lukavac erstklassige Holzmöbel. Unsere Arbeit steht für Qualität und modernes Design.",
-    galleryH: "Unsere Arbeiten", reviewsH: "Kundenbewertungen", 
+    heroTitle: "Tischlerei", heroSub: "Maßgefertigte Möbel",
+    aboutH: "Über uns", about: "Mit mehr als 20 Jahren Erfahrung fertigen wir in Lukavac erstklassige Holzmöbel.",
+    galleryH: "Galerie", reviewsH: "Bewertungen", 
     rev1: "Sehr zufrieden mit der Küche! Alles wurde präzise erledigt.", 
     rev2: "Die Schränke sind perfekt. Professionelle und freundliche Handwerker.",
     contactH: "Kontakt", contact: "📧 halilovicnusret8@gmail.com <br> 📞 +387 61 635 340"
