@@ -12,40 +12,37 @@
   header img {height:50px;}
   nav a {margin:0 12px; text-decoration:none; color:#333; font-weight:600; font-size:14px; text-transform: uppercase;}
 
-  .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('KUHINJA.jpg'); background-size: cover; background-position: center; height: 40vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; padding: 0 20px; }
+  .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('KUHINJA.jpg'); background-size: cover; background-position: center; height: 35vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; }
   
-  .section {margin:60px auto; max-width:1100px; padding:0 20px;}
-  h2 {text-align:center; border-bottom: 3px solid #ff9900; display: block; width: fit-content; margin: 0 auto 30px; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;}
+  .section {margin:50px auto; max-width:1100px; padding:0 20px;}
+  h2 {text-align:center; border-bottom: 3px solid #ff9900; display: block; width: fit-content; margin: 0 auto 30px; padding-bottom: 10px; text-transform: uppercase;}
 
-  .lang-switch { text-align: center; margin: 25px 0; }
-  .lang-switch button { cursor: pointer; padding: 10px 25px; margin: 0 8px; border: 2px solid #ff9900; background: #fff; border-radius: 5px; font-weight: bold; font-size: 15px; transition: 0.3s; }
-  .lang-switch button:hover { background: #ff9900; color: white; }
+  /* Dugmad za jezike */
+  .lang-switch { text-align: center; margin: 20px 0; }
+  .lang-switch button { cursor: pointer; padding: 10px 25px; margin: 0 5px; border: 2px solid #ff9900; background: #fff; border-radius: 5px; font-weight: bold; }
 
-  /* Grid za "Zašto mi" */
-  .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: center; margin-top: 30px; }
-  .feature-box { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #ff9900; }
+  /* Zašto mi - Sekcija */
+  .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+  .feature-box { background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: center; border-top: 4px solid #ff9900; }
 
   /* Galerija */
-  .folder-wrapper { background: #fff; border: 1px solid #ddd; border-radius: 10px; margin-bottom: 40px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-  .folder-header { background: #333; color: #fff; padding: 15px 25px; font-weight: bold; font-size: 18px; }
-  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 15px; padding: 20px; }
-  .gallery-item { border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #eee; text-align: center; cursor: pointer; transition: 0.4s; }
-  .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
-  .gallery-item img { width: 100%; height: 200px; object-fit: cover; display: block; }
-  .gallery-item p { padding: 12px; margin: 0; font-size: 14px; font-weight: 600; background: #fff; }
+  .folder-wrapper { background: #fff; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 30px; overflow: hidden; }
+  .folder-header { background: #f8f8f8; padding: 12px 20px; border-bottom: 1px solid #ddd; font-weight: bold; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 15px; padding: 15px; }
+  .gallery-item { border-radius: 6px; overflow: hidden; background: #fff; border: 1px solid #eee; cursor: pointer; transition: 0.3s; }
+  .gallery-item:hover { transform: scale(1.02); }
+  .gallery-item img { width: 100%; height: 180px; object-fit: cover; display: block; }
+  .gallery-item p { padding: 8px; margin: 0; font-size: 13px; font-weight: 600; text-align: center; }
 
-  /* Lightbox/Modal */
-  #imageModal { display: none; position: fixed; z-index: 2000; padding-top: 40px; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); }
-  #modalImg { margin: auto; display: block; max-width: 90%; max-height: 85vh; border: 3px solid #fff; border-radius: 5px; }
-  .close-modal { position: absolute; top: 15px; right: 35px; color: #fff; font-size: 50px; font-weight: bold; cursor: pointer; transition: 0.3s; }
-  .close-modal:hover { color: #ff9900; }
+  /* Lightbox */
+  #imageModal { display: none; position: fixed; z-index: 2000; padding-top: 50px; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); }
+  #modalImg { margin: auto; display: block; max-width: 90%; max-height: 80vh; border: 2px solid #fff; }
+  .close { position: absolute; top: 15px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; }
 
   /* Recenzije */
-  .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-  .review-card { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-left: 6px solid #ff9900; position: relative; }
-  .review-card i { color: #ff9900; font-size: 20px; }
+  .review-card { background: #fff; padding: 25px; border-radius: 8px; border-left: 6px solid #ff9900; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
 
-  footer { background: #222; color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
+  footer { background: #222; color: #fff; padding: 30px; text-align: center; margin-top: 50px; }
 </style>
 </head>
 <body>
@@ -53,16 +50,17 @@
 <header>
   <div class="logo"><img src="eena.png" alt="Logo"></div>
   <nav>
-    <a href="#about" id="nav-about">O nama</a>
-    <a href="#gallery" id="nav-gallery">Galerija</a>
-    <a href="#reviews" id="nav-reviews">Recenzije</a>
-    <a href="#contact" id="nav-contact">Kontakt</a>
+    <a href="#about" id="nav1">O nama</a>
+    <a href="#why-us" id="nav2">Zašto mi</a>
+    <a href="#gallery" id="nav3">Galerija</a>
+    <a href="#reviews" id="nav4">Recenzije</a>
+    <a href="#contact" id="nav5">Kontakt</a>
   </nav>
 </header>
 
 <section class="hero">
   <h1 id="hero-title">Stolarska Radnja</h1>
-  <p id="hero-sub" style="font-size: 1.2rem;">Vrhunska izrada namještaja po mjeri</p>
+  <p id="hero-sub">Vrhunska izrada namještaja po vašoj mjeri</p>
 </section>
 
 <div class="lang-switch">
@@ -73,155 +71,123 @@
 
 <div class="section" id="about">
   <h2 id="about-h">O Nama</h2>
-  <p id="about-text" style="text-align:center; max-width:900px; margin:0 auto; font-size: 1.1rem; color: #555;"></p>
+  <p id="about-text" style="text-align:center; max-width:850px; margin:0 auto; font-size: 1.1rem;">
+    Mi smo porodična stolarska radnja iz Lukavca sa tradicijom dugom preko 20 godina. Specijalizovani smo za projektovanje i izradu unikatnog namještaja od masivnog drveta i modernih pločastih materijala. Svaki naš komad namještaja priča svoju priču, spajajući tradicionalne zanatske vještine sa modernim dizajnom kako bismo stvorili savršen dom za vas.
+  </p>
 </div>
 
 <div class="section" id="why-us">
   <h2 id="why-h">Zašto Odabrati Nas?</h2>
   <div class="features-grid">
     <div class="feature-box">
-      <h3 id="f1-t">Dugogodišnje Iskustvo</h3>
-      <p id="f1-p">Preko 20 godina rada u drvnoj industriji garantuje vrhunski kvalitet i stručnost.</p>
+      <h3 id="f1-t">Vrhunski Kvalitet</h3>
+      <p id="f1-p">Koristimo samo probrane materijale i najkvalitetnije okove kako bi vaš namještaj trajao generacijama.</p>
     </div>
     <div class="feature-box">
-      <h3 id="f2-t">Materijali Premium Klase</h3>
-      <p id="f2-p">Koristimo isključivo najkvalitetnije puno drvo i moderne pločaste materijale.</p>
+      <h3 id="f2-t">Preciznost i Rokovi</h3>
+      <p id="f2-p">Vaše vrijeme poštujemo. Svaki projekt radimo sa milimetarskom preciznošću i isporučujemo u dogovorenom roku.</p>
     </div>
     <div class="feature-box">
-      <h3 id="f3-t">Po Vašoj Mjeri</h3>
-      <p id="f3-p">Svaki komad namještaja je unikatan i prilagođen isključivo vašem prostoru.</p>
+      <h3 id="f3-t">Personalizovan Pristup</h3>
+      <p id="f3-p">Od prve skice do finalne montaže, radimo zajedno s vama kako bismo ispunili svaku vašu specifičnu želju.</p>
     </div>
   </div>
 </div>
 
 <div class="section" id="gallery">
-  <h2 id="gallery-h">Naši Projekti</h2>
-  
+  <h2 id="gallery-h">Naši Radovi</h2>
   <div class="folder-wrapper">
-    <div class="folder-header" id="cat-kitchens">📂 KUHINJE PO MJERI</div>
+    <div class="folder-header">📂 KUHINJE I ORMARI</div>
     <div class="gallery-grid">
-      <div class="gallery-item" onclick="openModal(this)"><img src="KUHINJA.jpg"><p>Modern White Kitchen</p></div>
-      <div class="gallery-item" onclick="openModal(this)"><img src="KUHINJA1.jpg"><p>Classic Wood Style</p></div>
-      <div class="gallery-item" onclick="openModal(this)"><img src="KUHINJA2.jpg"><p>Lux Anthracite Design</p></div>
-      <div class="gallery-item" onclick="openModal(this)"><img src="KUHINJAA1.jpg"><p>Premium Kitchen Line</p></div>
-    </div>
-  </div>
-
-  <div class="folder-wrapper">
-    <div class="folder-header" id="cat-doors">📂 VRATA I PROZORI</div>
-    <div class="gallery-grid">
-      <div class="gallery-item" onclick="openModal(this)"><img src="VRATA.jpg"><p>Interior Door Design</p></div>
-      <div class="gallery-item" onclick="openModal(this)"><img src="ULAZNA%20VRATA.jpg"><p>Safety Entrance Door</p></div>
-      <div class="gallery-item" onclick="openModal(this)"><img src="PROZOR.jpg"><p>Wooden Window Frame</p></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="KUHINJA.jpg"><p>Moderna Kuhinja</p></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="ORMAR.jpg"><p>Plakar po mjeri</p></div>
+      <div class="gallery-item" onclick="openLightbox(this)"><img src="KUHINJA1.jpg"><p>Kuhinja Klasik</p></div>
     </div>
   </div>
 </div>
 
-<div id="imageModal" onclick="closeModal()">
-  <span class="close-modal">&times;</span>
+<div id="imageModal">
+  <span class="close" onclick="closeLightbox()">&times;</span>
   <img id="modalImg">
 </div>
 
 <div class="section" id="reviews">
-  <h2 id="reviews-h">Utisci Naših Klijenta</h2>
-  <div class="review-grid">
-    <div class="review-card">
-      <p>⭐⭐⭐⭐⭐</p>
-      <p id="rev1-text">"Prezadovoljan sam izradom kuhinje. Svaki milimetar je iskorišten pametno, a montaža je bila brza i čista. Preporuka svima u Lukavcu!"</p>
-      <small><strong>- Edin H.</strong></small>
-    </div>
-    <div class="review-card">
-      <p>⭐⭐⭐⭐⭐</p>
-      <p id="rev2-text">"Vrata koja su nam napravili su prava umjetnost. Čvrsta, moderna i savršeno se uklapaju u enterijer. Profesionalizam na visokom nivou."</p>
-      <small><strong>- Nadija V.</strong></small>
-    </div>
+  <h2 id="reviews-h">Utisci Klijenata</h2>
+  <div class="review-card">
+    <p>⭐⭐⭐⭐⭐</p>
+    <p id="rev1-p">"Naručili smo kompletnu kuhinju i plakare. Oduševljeni smo preciznošću i završnom obradom. Majstori su profesionalni i veoma uredni."</p>
+    <small>— Edin H., Lukavac</small>
+  </div>
+  <div class="review-card">
+    <p>⭐⭐⭐⭐⭐</p>
+    <p id="rev2-p">"Vrata koja su nam napravili su vrhunskog kvaliteta. Sve je urađeno tačno onako kako smo zamislili. Topla preporuka!"</p>
+    <small>— Nadija V., Tuzla</small>
   </div>
 </div>
 
 <div class="section" id="contact" style="text-align:center;">
-  <h2 id="contact-h">Kontaktirajte Nas</h2>
-  <p id="contact-info" style="font-size:1.3rem; line-height: 2;">
-    📍 Lukavac, Bosna i Hercegovina <br>
-    📧 <strong>halilovicnusret8@gmail.com</strong> <br>
-    📞 <strong>+387 61 635 340</strong>
+  <h2 id="contact-h">Kontakt</h2>
+  <p id="contact-text" style="font-size:1.2rem; font-weight:bold;">
+    📧 halilovicnusret8@gmail.com <br>
+    📞 +387 61 635 340 <br>
+    📍 Lukavac, BiH
   </p>
 </div>
 
 <footer>
-  <p>&copy; 2026 Stolarska Radnja. Sva prava zadržana. <br> Specijalisti za unikatan namještaj.</p>
+  <p>&copy; 2026 Stolarska Radnja Ena. Sva prava zadržana.</p>
 </footer>
 
 <script>
-// Lightbox funkcije
-function openModal(element) {
-  var modal = document.getElementById("imageModal");
-  var modalImg = document.getElementById("modalImg");
+// LIGHTBOX FUNKCIJA
+function openLightbox(el) {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
   modal.style.display = "block";
-  modalImg.src = element.getElementsByTagName('img')[0].src;
+  modalImg.src = el.querySelector("img").src;
 }
-function closeModal() {
+function closeLightbox() {
   document.getElementById("imageModal").style.display = "none";
 }
 
-// Prevodi sa više teksta
-const translations = {
+// PREVODI
+const langData = {
   ba: {
-    navAbout: "O nama", navGallery: "Galerija", navReviews: "Recenzije", navContact: "Kontakt",
-    heroTitle: "Stolarska Radnja", heroSub: "Tradicija i kvalitet u svakom komadu drveta",
-    aboutH: "O Nama", aboutText: "Mi smo porodična radionica iz Lukavca sa tradicijom dugom preko 20 godina. Specijalizovani smo za projektovanje i izradu namještaja koji spaja estetiku i funkcionalnost. Naš cilj je da vaše ideje pretvorimo u stvarnost koristeći najsavremenije tehnike obrade drveta.",
-    whyH: "Zašto Odabrati Nas?", f1T: "20+ Godina Iskustva", f1P: "Decenije rada na najzahtjevnijim projektima čine nas liderima u regiji.", f2T: "Vrhunski Materijali", f2P: "Surađujemo sa najboljim dobavljačima kako bismo osigurali dugovječnost vašeg namještaja.", f3T: "Dizajn po želji", f3P: "Nudimo potpuno besplatne konsultacije i dizajniranje prema vašim specifičnim potrebama.",
-    galleryH: "Naši Posljednji Radovi", catKitchens: "📂 KUHINJE PO MJERI", catDoors: "📂 VRATA I PROZORI",
-    reviewsH: "Šta Klijenti Kažu o Nama", rev1Text: '"Prezadovoljan sam izradom kuhinje. Svaki milimetar je iskorišten pametno, a montaža je bila brza i čista. Preporuka svima!"', rev2Text: '"Vrata koja su nam napravili su prava umjetnost. Profesionalizam na visokom nivou od prve skice do završnice."',
-    contactH: "Kontaktirajte Nas"
+    heroT: "Stolarska Radnja", heroS: "Vrhunska izrada namještaja po vašoj mjeri",
+    aboutH: "O Nama", aboutT: "Mi smo porodična stolarska radnja iz Lukavca sa tradicijom dugom preko 20 godina. Specijalizovani smo za projektovanje i izradu unikatnog namještaja...",
+    whyH: "Zašto Odabrati Nas?", f1T: "Vrhunski Kvalitet", f2T: "Preciznost i Rokovi", f3T: "Personalizovan Pristup",
+    rev1: '"Naručili smo kompletnu kuhinju i plakare. Oduševljeni smo preciznošću i završnom obradom. Majstori su profesionalni i veoma uredni."',
+    contactH: "Kontakt"
   },
   en: {
-    navAbout: "About", navGallery: "Gallery", navReviews: "Reviews", navContact: "Contact",
-    heroTitle: "Carpentry Workshop", heroSub: "Tradition and quality in every piece of wood",
-    aboutH: "About Us", aboutText: "We are a Lukavac-based workshop with over 20 years of expertise. We specialize in custom furniture that blends beauty and functionality. Our mission is to transform your ideas into reality using modern woodworking techniques.",
-    whyH: "Why Choose Us?", f1T: "20+ Years Experience", f1P: "Decades of work on demanding projects make us leaders in the local industry.", f2T: "Premium Materials", f2P: "We partner with the best suppliers to ensure your furniture lasts for generations.", f3T: "Custom Design", f3P: "We offer free consultations and tailored design services based on your specific requirements.",
-    galleryH: "Our Recent Projects", catKitchens: "📂 CUSTOM KITCHENS", catDoors: "📂 DOORS & WINDOWS",
-    reviewsH: "What Our Clients Say", rev1Text: '"Extremely satisfied with the kitchen. Every inch was used smartly, and the assembly was fast and clean. Highly recommended!"', rev2Text: '"The doors they made for us are a work of art. True professionalism from the first sketch to the finish."',
-    contactH: "Contact Us"
+    heroT: "Carpentry Shop", heroS: "Premium custom-made furniture",
+    aboutH: "About Us", aboutT: "We are a family-owned carpentry shop from Lukavac with over 20 years of tradition. We specialize in designing and crafting unique furniture from solid wood...",
+    whyH: "Why Choose Us?", f1T: "Top Quality", f2T: "Precision & Deadlines", f3T: "Personalized Approach",
+    rev1: '"We ordered a complete kitchen and wardrobes. We are thrilled with the precision and finish. The craftsmen are professional and very tidy."',
+    contactH: "Contact"
   },
   de: {
-    navAbout: "Über uns", navGallery: "Galerie", navReviews: "Bewertungen", navContact: "Kontakt",
-    heroTitle: "Tischlerei Fachbetrieb", heroSub: "Tradition und Qualität in jedem Stück Holz",
-    aboutH: "Über Uns", aboutText: "Wir sind ein Familienbetrieb aus Lukavac mit über 20 Jahren Erfahrung. Wir sind spezialisiert auf die Herstellung von Möbeln nach Maß, die Ästhetik und Funktionalität verbinden. Unser Ziel ist es, Ihre Wohnträume wahr werden zu lassen.",
-    whyH: "Warum uns wählen?", f1T: "20+ Jahre Erfahrung", f1P: "Jahrzehntelange Arbeit an anspruchsvollen Projekten macht uns zu Experten in der Region.", f2T: "Beste Materialien", f2P: "Wir verwenden nur hochwertige Hölzer, um die Langlebigkeit Ihrer Möbel zu garantieren.", f3T: "Individuelles Design", f3P: "Wir bieten kostenlose Beratung und Planung, die genau auf Ihre Bedürfnisse zugeschnitten ist.",
-    galleryH: "Unsere Aktuellen Projekte", catKitchens: "📂 KÜCHEN NACH MASS", catDoors: "📂 TÜREN UND FENSTER",
-    reviewsH: "Kundenmeinungen", rev1Text: '"Sehr zufrieden mit der neuen Küche. Jeder Millimeter wurde perfekt genutzt. Schnelle und saubere Montage."', rev2Text: '"Die Türen sind ein echtes Kunstwerk. Höchste Professionalität von der Planung bis zur Ausführung."',
-    contactH: "Kontaktieren Sie uns"
+    heroT: "Tischlerei", heroS: "Hochwertige Möbel nach Maß",
+    aboutH: "Über Uns", aboutT: "Wir sind ein familiengeführter Tischlereibetrieb aus Lukavac mit über 20 Jahren Tradition. Wir sind spezialisiert auf die Planung und Herstellung von Unikaten...",
+    whyH: "Warum uns wählen?", f1T: "Top Qualität", f2T: "Präzision & Termine", f3T: "Persönlicher Ansatz",
+    rev1: '"Wir haben eine komplette Küche und Schränke bestellt. Wir sind von der Präzision und Verarbeitung begeistert. Die Handwerker sind professionell und sehr ordentlich."',
+    contactH: "Kontakt"
   }
 };
 
-function setLanguage(lang) {
-  const t = translations[lang];
-  document.getElementById('nav-about').innerText = t.navAbout;
-  document.getElementById('nav-gallery').innerText = t.navGallery;
-  document.getElementById('nav-reviews').innerText = t.navReviews;
-  document.getElementById('nav-contact').innerText = t.navContact;
-  document.getElementById('hero-title').innerText = t.heroTitle;
-  document.getElementById('hero-sub').innerText = t.heroSub;
-  document.getElementById('about-h').innerText = t.aboutH;
-  document.getElementById('about-text').innerText = t.aboutText;
-  document.getElementById('why-h').innerText = t.whyH;
-  document.getElementById('f1-t').innerText = t.f1T;
-  document.getElementById('f1-p').innerText = t.f1P;
-  document.getElementById('f2-t').innerText = t.f2T;
-  document.getElementById('f2-p').innerText = t.f2P;
-  document.getElementById('f3-t').innerText = t.f3T;
-  document.getElementById('f3-p').innerText = t.f3P;
-  document.getElementById('gallery-h').innerText = t.galleryH;
-  document.getElementById('cat-kitchens').innerText = t.catKitchens;
-  document.getElementById('cat-doors').innerText = t.catDoors;
-  document.getElementById('reviews-h').innerText = t.reviewsH;
-  document.getElementById('rev1-text').innerText = t.rev1Text;
-  document.getElementById('rev2-text').innerText = t.rev2Text;
-  document.getElementById('contact-h').innerText = t.contactH;
+function setLanguage(l) {
+  const d = langData[l];
+  document.getElementById('hero-title').innerText = d.heroT;
+  document.getElementById('hero-sub').innerText = d.heroS;
+  document.getElementById('about-h').innerText = d.aboutH;
+  document.getElementById('about-text').innerText = d.aboutT;
+  document.getElementById('why-h').innerText = d.whyH;
+  document.getElementById('f1-t').innerText = d.f1T;
+  document.getElementById('f2-t').innerText = d.f2T;
+  document.getElementById('f3-t').innerText = d.f3T;
+  document.getElementById('rev1-p').innerText = d.rev1;
+  document.getElementById('contact-h').innerText = d.contactH;
 }
-
-// Inicijalno učitaj bosanski
-setLanguage('ba');
 </script>
 </body>
 </html>
