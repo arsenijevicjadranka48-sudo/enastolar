@@ -13,21 +13,17 @@
   
   .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('KUHINJA.jpg'); background-size: cover; background-position: center; height: 30vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; }
   
-  .section {margin:40px auto; max-width:1200px; padding:0 20px; text-align:center;}
-  h2 {border-bottom: 2px solid #ff9900; display: inline-block; padding-bottom: 5px; margin-bottom: 30px; text-transform: uppercase;}
-
-  /* Stil za foldere (sekcije) */
-  .folder-container { background: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 50px; }
-  .folder-title { text-align: left; color: #0066cc; font-weight: bold; margin-bottom: 20px; border-left: 5px solid #0066cc; padding-left: 15px; }
+  .section {margin:40px auto; max-width:1200px; padding:0 20px;}
+  .folder-wrapper { background: #fff; border: 2px solid #ddd; border-radius: 10px; margin-bottom: 40px; overflow: hidden; }
+  .folder-header { background: #eee; padding: 10px 20px; border-bottom: 2px solid #ddd; font-weight: bold; color: #555; display: flex; align-items: center; }
+  .folder-header::before { content: '📂'; margin-right: 10px; }
   
-  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px; }
-  .gallery-item { background: #fff; border: 1px solid #eee; border-radius: 8px; overflow: hidden; transition: 0.3s; }
-  .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-  .gallery-item img { width: 100%; height: 180px; object-fit: cover; display: block; }
-  .gallery-item p { padding: 10px; margin: 0; font-size: 13px; font-weight: 600; background: #f9f9f9; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
+  .gallery-item { background: #fff; border: 1px solid #eee; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+  .gallery-item img { width: 100%; height: 200px; object-fit: cover; display: block; }
+  .gallery-item p { padding: 10px; margin: 0; font-size: 14px; text-align: center; font-weight: 600; }
 
   footer { background: #222; color: #fff; padding: 20px; text-align: center; }
-  .lang-switch button { cursor: pointer; padding: 5px 10px; border-radius: 4px; border: 1px solid #ccc; background: #fff; }
 </style>
 </head>
 <body>
@@ -39,92 +35,65 @@
     <a href="#kreveti">Kreveti</a>
     <a href="#ormari">Ormari</a>
     <a href="#vrata">Vrata</a>
-    <a href="#contact">Kontakt</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h1 id="hero-title">Naši Radovi po Kategorijama</h1>
+  <h1>Pregled Radova po Folderima</h1>
 </section>
 
-<div class="lang-switch" style="text-align:center; margin-top:20px;">
-  <button onclick="setLanguage('ba')">BA</button>
-  <button onclick="setLanguage('en')">EN</button>
-  <button onclick="setLanguage('de')">DE</button>
-</div>
-
 <div class="section" id="kuhinje">
-  <div class="folder-container">
-    <h3 class="folder-title" id="f-kuhinje">FOLDER: KUHINJE</h3>
+  <div class="folder-wrapper">
+    <div class="folder-header">FOLDER: KUHINJE</div>
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="KUHINJA.jpg"><p>Kuhinja 1</p></div>
-      <div class="gallery-item"><img src="KUHINJA1.jpg"><p>Kuhinja 2</p></div>
-      <div class="gallery-item"><img src="KUHINJA2.jpg"><p>Kuhinja 3</p></div>
-      <div class="gallery-item"><img src="KUHINJAA1.jpg"><p>Kuhinja 4 (A1)</p></div>
+      <div class="gallery-item"><img src="KUHINJA.jpg" alt="Kuhinja"><p>Kuhinja po mjeri</p></div>
+      <div class="gallery-item"><img src="KUHINJA1.jpg" alt="Kuhinja 1"><p>Moderna Kuhinja</p></div>
+      <div class="gallery-item"><img src="KUHINJA2.jpg" alt="Kuhinja 2"><p>Kuhinja Design</p></div>
+      <div class="gallery-item"><img src="KUHINJAA1.jpg" alt="Kuhinja A1"><p>Kuhinja Premium</p></div>
     </div>
   </div>
 </div>
 
 <div class="section" id="kreveti">
-  <div class="folder-container">
-    <h3 class="folder-title" id="f-kreveti">FOLDER: KREVETI</h3>
+  <div class="folder-wrapper">
+    <div class="folder-header">FOLDER: KREVETI</div>
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="KREVET.jpg"><p>Krevet Klasik</p></div>
-      <div class="gallery-item"><img src="KREVET1.jpg"><p>Krevet Modern</p></div>
-      <div class="gallery-item"><img src="KREVET2.jpg"><p>Krevet sa ladicama</p></div>
+      <div class="gallery-item"><img src="KREVET.jpg" alt="Krevet"><p>Krevet 1</p></div>
+      <div class="gallery-item"><img src="KREVET1.jpg" alt="Krevet 1"><p>Krevet 2</p></div>
+      <div class="gallery-item"><img src="KREVET2.jpg" alt="Krevet 2"><p>Krevet 3</p></div>
     </div>
   </div>
 </div>
 
 <div class="section" id="ormari">
-  <div class="folder-container">
-    <h3 class="folder-title" id="f-ormari">FOLDER: ORMARI I PROZORI</h3>
+  <div class="folder-wrapper">
+    <div class="folder-header">FOLDER: ORMARI I OSTALO</div>
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="ORMAR.jpg"><p>Ormar 1</p></div>
-      <div class="gallery-item"><img src="ORMAR1.jpg"><p>Ormar 2</p></div>
-      <div class="gallery-item"><img src="ORMAR2.jpeg"><p>Ormar 3 (Klizni)</p></div>
-      <div class="gallery-item"><img src="PROZOR.jpg"><p>Prozor</p></div>
-      <div class="gallery-item"><img src="STRIJER.jpg"><p>Stepenište</p></div>
+      <div class="gallery-item"><img src="ORMAR.jpg" alt="Ormar"><p>Ormar 1</p></div>
+      <div class="gallery-item"><img src="ORMAR1.jpg" alt="Ormar 1"><p>Ormar 2</p></div>
+      <div class="gallery-item"><img src="ORMAR2.jpeg" alt="Ormar 2"><p>Ormar 3</p></div>
+      <div class="gallery-item"><img src="PROZOR.jpg" alt="Prozor"><p>Prozor</p></div>
+      <div class="gallery-item"><img src="STRIJER.jpg" alt="Strijer"><p>Stepenište</p></div>
     </div>
   </div>
 </div>
 
 <div class="section" id="vrata">
-  <div class="folder-container">
-    <h3 class="folder-title" id="f-vrata">FOLDER: VRATA</h3>
+  <div class="folder-wrapper">
+    <div class="folder-header">FOLDER: VRATA</div>
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="ULAZNA%20VRATA.jpg"><p>Ulazna Vrata</p></div>
-      <div class="gallery-item"><img src="SOBNA%20VRATA.png"><p>Sobna Vrata</p></div>
-      <div class="gallery-item"><img src="VRATA.jpg"><p>Vrata model 1</p></div>
-      <div class="gallery-item"><img src="VRATA1.jpg"><p>Vrata model 2</p></div>
-      <div class="gallery-item"><img src="VRATA2.jpg"><p>Vrata model 3</p></div>
+      <div class="gallery-item"><img src="VRATA.jpg" alt="Vrata"><p>Vrata 1</p></div>
+      <div class="gallery-item"><img src="VRATA1.jpg" alt="Vrata 1"><p>Vrata 2</p></div>
+      <div class="gallery-item"><img src="VRATA2.jpg" alt="Vrata 2"><p>Vrata 3</p></div>
+      <div class="gallery-item"><img src="ULAZNA%20VRATA.jpg" alt="Ulazna Vrata"><p>Ulazna Vrata</p></div>
+      <div class="gallery-item"><img src="SOBNA%20VRATA.png" alt="Sobna Vrata"><p>Sobna Vrata</p></div>
     </div>
   </div>
 </div>
 
-<div class="section" id="contact">
-  <h2 id="contact-h">Kontakt</h2>
-  <p id="contact-text">Email: halilovicnusret8@gmail.com | Tel: +387 61 635 340</p>
-</div>
-
 <footer>
-  <p>&copy; 2026 Stolarska Radnja Ena. Sva prava pridržana.</p>
+  <p>&copy; 2026 Stolarska Radnja. Sva prava pridržana.</p>
 </footer>
 
-<script>
-const content = {
-  ba: { fKuhinje: "FOLDER: KUHINJE", fKreveti: "FOLDER: KREVETI", fOrmari: "FOLDER: ORMARI I PROZORI", fVrata: "FOLDER: VRATA", contactH: "Kontakt" },
-  en: { fKuhinje: "FOLDER: KITCHENS", fKreveti: "FOLDER: BEDS", fOrmari: "FOLDER: WARDROBES", fVrata: "FOLDER: DOORS", contactH: "Contact" },
-  de: { fKuhinje: "ORDNER: KÜCHEN", fKreveti: "ORDNER: BETTEN", fOrmari: "ORDNER: SCHRÄNKE", fVrata: "ORDNER: TÜREN", contactH: "Kontakt" }
-};
-
-function setLanguage(lang) {
-  document.getElementById('f-kuhinje').innerText = content[lang].fKuhinje;
-  document.getElementById('f-kreveti').innerText = content[lang].fKreveti;
-  document.getElementById('f-ormari').innerText = content[lang].fOrmari;
-  document.getElementById('f-vrata').innerText = content[lang].fVrata;
-  document.getElementById('contact-h').innerText = content[lang].contactH;
-}
-</script>
 </body>
 </html>
